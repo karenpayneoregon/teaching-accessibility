@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- Note lang -->
+<html lang="en">
+<head>
+    <title>Basic label to input</title>
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/basic.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+</head>
+<body>
+
+    <h1 class="fs-5 text-center">Basics: Working with label associated with inputs</h1>
+
+    <div class="container">
+        <main>
+            <form id="form1" class="mt-5">
+
+                <fieldset id="mainFieldset" class="border border-dark-subtle rounded-3 fieldset-auto-width">
+
+                    <legend class="float-none w-auto fs-6 px-1" id="description">
+                        <span class="fw-bold ledgendSpan">No labels for inputs</span>
+                    </legend>
+                    <div class="row">
+                        <div class="col">
+                            <label for="email" style="visibility: hidden">Enter email</label>
+                            <input type="text" class="form-control" placeholder="Enter email" id="email">
+                        </div>
+                        <div class="col">
+                            <label for="pswd" style="visibility: hidden">Enter password</label>
+                            <input type="password" class="form-control" placeholder="Enter password" id="pswd">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+        </main>
+
+        <div class="rowSpacer"></div>
+        <hr class="style1" />
+
+        <form id="form2">
+            <fieldset id="properFieldset" class="border border-dark-subtle rounded-3 fieldset-auto-width">
+
+                <legend class="float-none w-auto fs-6 px-1" id="description1">
+                    <span class="fw-bold ledgendSpan">Proper</span>
+                </legend>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+
+            </fieldset>
+        </form>
+
+        <div class="rowSpacer"></div>
+        <hr class="style1" />
+
+        <form id="form3">
+            <fieldset id="properFieldset2" class="border border-dark-subtle rounded-3" style="width: 30em">
+
+                <legend class="float-none w-auto fs-6 px-1" id="description2">
+                    <span class="fw-bold ledgendSpan">Proper (see comments)</span>
+                </legend>
+
+                <div class="m-4">
+
+                    <div class="row mb-3">
+                        <label for="inputEmail" class="col-sm-2 col-form-label text-end pe-0">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                        </div>
+                    </div>
+                    
+                    <!-- 
+                    this label was difficult and if we turn on css debugging we are off by one character 
+                    but will do.
+                    -->
+
+                    <div class="row mb-3">
+                        <label for="inputPassword" class="col-sm-2 col-form-label pe-2 me-0">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                        </div>
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </form>
+
+    </div>
+
+    <script>
+        /*
+        * Provides the ability to add outlines to every single element on a page
+        * Usage: Pass true to toggle for development environment, false for other environments
+        * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+        */
+        document.addEventListener('keydown',
+            function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+    </script>
+
+</body>
+</html>
