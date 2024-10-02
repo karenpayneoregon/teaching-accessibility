@@ -14,6 +14,6 @@ This project focuses on [associating labels to inputs](https://www.w3.org/WAI/WC
 - **Bottom set** is considered the old convention for obtaining input. A common mistake here is having labels and inputs with breathing space between the two which can be challenging as per the image below, some users can only see between the fingers. Also, this can be challenging for a developer to get alignment correct. In the code an extra effort was needed to get alignment correct regarding right aligning labels.
 
 
-![Figure1](assets/figure1.png)
+![Figure1](assets/Figure1.png)
 
 ## Index.html
