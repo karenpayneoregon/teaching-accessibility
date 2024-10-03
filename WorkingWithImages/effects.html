@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Note lang -->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Working with images</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/cityResponsive.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <link href="Lib/styles/imagehover.css" rel="stylesheet" />
+    <link href="Lib/styles/effects.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Responsive<span> image</span></h1>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="demo">
+                <!-- one of 44 effects -->
+                <figure class="imghvr-fall-away-horiz">
+                    <img id="van" src="Lib/Images/Van.png" />
+                    <figcaption>
+                        <h2>About</h2>
+                        <p>This was a van I used to travel around the country in my early twenties.</p>
+                        <p>Every week our club would go someplace different.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button id="setter" class="btn btn-dark btn-sm">Set alt</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+        /* example to set an image alt attribute dynamically */
+        document.getElementById("setter").addEventListener("click", function () {
+            document.getElementById("van").setAttribute("alt", "Karen's van");
+        });
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<!-- Note lang -->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Working with images</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+
+    <!-- styles are here temp and once okay move to index.css  -->
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Images<span>Required SVG</span></h1>
+    </div>
+    <!-- represents the dominant content of the <body> of this document. -->
+    <main>
+        <div class="container">
+  
+            <form id="mainForm" method="post" class="mt-2">
+                <!-- note style to reduce width and height -->
+                <fieldset id="mainFieldset"
+                          class="fieldset-auto-width border border-dark-subtle bg-light rounded-3 p-3 mt-3 mb-3">
+
+                    <legend class="float-none w-auto fs-6 px-1" id="description">
+                        <span class="fw-bold ledgendSpan">Information needed to order forms</span>
+                    </legend>
+
+                    <div class="row">
+
+                        <label class="oed-required" for="businessName">Business Name</label>
+
+                        <div class="col-lg-6">
+                            <input id="businessName" asp-for="Form.BusinessName" class="form-control mb-2" required />
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <label class="oed-required" for="accountNumber">Account Number</label>
+                        <div class="col-lg-6">
+                            <input id="accountNumber" asp-for="Form.AccountNumber" class="form-control mb-2" required />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="oed-required" for="contactPerson">Contact Person</label>
+                        <div class="col-lg-6">
+                            <input id="contactPerson" asp-for="Form.ContactPerson" class="form-control mb-2" required />
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* globally setup required text */
+            var requiredElements = document.getElementsByClassName('oed-required');
+
+            for (var index = 0; index < requiredElements.length; ++index) {
+                var item = requiredElements[index];
+                //item.innerHTML += "<span style='color:#B22222;font-weight:bold'>&nbsp;<img src='Lib/Images/redAsterisk.svg' /></span>";
+                item.insertAdjacentHTML("afterbegin", "<span style='color:#B22222;font-weight:bold'><img src='Lib/Images/redAsterisk.svg' alt='required' /></span>");
+            }
+
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown',
+                function (event) {
+
+                    if (event.key === '1' && event.altKey && event.ctrlKey) {
+                        // this is for development environment
+                        $debugHelper.toggle(true);
+                    }
+
+                });
+
+
+
+        });
+    </script>
+</body>
+</html>
