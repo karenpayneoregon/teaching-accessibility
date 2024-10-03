@@ -35,14 +35,26 @@
                     </figcaption>
                 </figure>
             </div>
+
             <div class="row">
                 <div class="col-12 text-center">
-                    <button id="setter" class="btn btn-dark btn-sm">Set alt</button>
+                    <button id="setter" class="btn btn-dark btn-sm">Set alt for above image</button>
                 </div>
 
             </div>
-
+            <div class="demo">
+                <!-- one of 44 effects -->
+                <figure class="imghvr-fall-away-horiz">
+                    <img id="cityImage" src="Lib/Images/City.png" />
+                    <figcaption>
+                        <h2>About</h2>
+                        <p>The Cinque Terre are a coastal area within <mark>Liguria</mark>, in the northwest of Italy.</p>
+                    </figcaption>
+                </figure>
+            </div>
         </div>
+        
+        
 
     </main>
 
@@ -63,9 +75,23 @@
 
             });
 
+            /*
+             * The following code sets the alt tag for each image based on the file name
+             * which is only good with decent file names.
+             */
+            const images = document.querySelectorAll('img');
+            images.forEach(image => {
+                const id = image.id;
+                image.alt = document.getElementById(id).src.split("/").pop().split(".")[0];
+            });
+
         });
 
-        /* example to set an image alt attribute dynamically */
+        /*
+         * example to set an image alt attribute dynamically
+         * The code above will have set the alt tag to van, this
+         * will overwrite it.
+         */
         document.getElementById("setter").addEventListener("click", function () {
             document.getElementById("van").setAttribute("alt", "Karen's van");
         });

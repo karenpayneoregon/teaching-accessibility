@@ -11,7 +11,7 @@
     <script src="lib/footerHelper.js"></script>
     <script src="Lib/unitedStates.js"></script>
     <link href="Lib/index.css" rel="stylesheet" />
-    
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
 
 
     <!-- styles are here temp and once okay move to index.css  -->
@@ -21,9 +21,10 @@
 </head>
 <body>
 
-    <!-- note use of bootstrap fs class to set a uniform font size -->
-    <h1 class="fs-5 text-center">Working with label associated with inputs</h1>
 
+    <div class="nine mt-3">
+        <h1>Working with<span> label associated with inputs</span></h1>
+    </div>
     <!-- represents the dominant content of the <body> of this document. -->
     <main>
 
@@ -32,7 +33,7 @@
             <div class="alert  lighten-60" role="alert">
                 <h1 class="fs-4">Order forms (Using custom colors)</h1>
             </div>
-            
+
 
             <form id="mainForm" method="post" class="mt-2">
 
@@ -47,7 +48,7 @@
                         <label class="oed-required" for="businessName">Business Name</label>
 
                         <div class="col-lg-6">
-                            <input id="businessName" asp-for="Form.BusinessName" class="form-control mb-2" required/>
+                            <input id="businessName" asp-for="Form.BusinessName" class="form-control mb-2" required />
                         </div>
 
                     </div>
@@ -120,7 +121,7 @@
 
     <!-- ensures the footer does not cover any elements -->
     <div class="spacer"></div>
-    
+
     <!-- this code could move to a .js file but not for a real application that needs document ready -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -149,7 +150,7 @@
              * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
             */
             document.addEventListener('keydown',
-                function(event) {
+                function (event) {
 
                     if (event.key === '1' && event.altKey && event.ctrlKey) {
                         // this is for development environment
