@@ -60,6 +60,30 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WorkingWithImages", "Workin
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson 3 -  color contrast", "Lesson 3 -  color contrast", "{F3F37CA1-6DAB-4BE1-8B34-CFB4BE9B33FD}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ColorContrast", "ColorContrast\", "{8FDB4770-C344-419C-A9EC-46FBC66F0FE7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65261"
+		Debug.AspNetCompiler.PhysicalPath = "ColorContrast\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65261\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65261"
+		Release.AspNetCompiler.PhysicalPath = "ColorContrast\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65261\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65261"
+		SlnRelativePath = "ColorContrast\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +98,10 @@ Global
 		{933AC0F8-3BEE-4DED-A94E-E91E60D8C842}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{933AC0F8-3BEE-4DED-A94E-E91E60D8C842}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{933AC0F8-3BEE-4DED-A94E-E91E60D8C842}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8FDB4770-C344-419C-A9EC-46FBC66F0FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FDB4770-C344-419C-A9EC-46FBC66F0FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FDB4770-C344-419C-A9EC-46FBC66F0FE7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FDB4770-C344-419C-A9EC-46FBC66F0FE7}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +109,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AABFB02E-8335-4BC4-A49E-FA5CAF0D2940} = {20BD4C04-0B50-4494-8F17-DF3E01CC6717}
 		{933AC0F8-3BEE-4DED-A94E-E91E60D8C842} = {125839E0-CAA9-4199-8BC1-EDA7F9D4CAAB}
+		{8FDB4770-C344-419C-A9EC-46FBC66F0FE7} = {F3F37CA1-6DAB-4BE1-8B34-CFB4BE9B33FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22F7B927-71C5-47DC-AC95-9D7B7AC43F1F}
