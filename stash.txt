@@ -1,4 +1,0 @@
-document.documentElement.setAttribute('lang', 'en');
-document.documentElement.setAttribute('lang', 'es');
-
-$x('//a')
