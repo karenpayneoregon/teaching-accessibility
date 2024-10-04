@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<!-- Note lang -->
+<html lang="en">
+<head>
+    <title>Text on image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="Lib/debugHelper.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <style>
+    </style>
+
+</head>
+<body>
+    <a href="#exampleInputEmail1" class="skip-link">Skip to content</a>
+
+    <h1 class="text-center pt-2">Skip link</h1>
+
+
+    <div class="container" role="main" aria-label="Main">
+
+        <main>
+            <div class="form">
+                <form id="form1">
+                    <fieldset id="properFieldset" class="border border-dark-subtle rounded-3 fieldset-auto-width">
+
+                        <legend class="float-none w-auto fs-6 px-1" id="description1">
+                            <span class="fw-bold ledgendSpan">Login</span>
+                        </legend>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" style="width: 15em;" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" style="width: 15em;" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-12 two text-center">
+                    <!-- Here we bypass navigation, press TAB two times  -->
+                    <a href="https://devweb07.emp.state.or.us/payne/Skipper.cfm" target="_blank">Example in Cold Fusion</a>
+                </div>
+            </div>
+
+        </main>
+        
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+
+        });
+
+    </script>
+</body>
+</html>
