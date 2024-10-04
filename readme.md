@@ -5,6 +5,10 @@ Provides code to teach proper techniques for accessibility conformance to [WCAG 
 ![Accessibility1](assets/Accessibility1.png)
 
 
+- [Chrome overrides](https://github.com/karenpayneoregon/teaching-accessibility/blob/master/chromeOverrides.md)
+- [Screen readers](https://github.com/karenpayneoregon/teaching-accessibility/blob/master/screenReaders.md)
+
+
 ## Projects
 
 | Project  | Description |
