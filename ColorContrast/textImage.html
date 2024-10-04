@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Note lang -->
+<html lang="en">
+<head>
+    <title>Text on image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <link href="Lib/styles/textOnImages.css" rel="stylesheet" />
+    <script src="Lib/debugHelper.js"></script>
+
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <style>
+    </style>
+
+</head>
+<body>
+    <!-- color issues with H2 and text on images -->
+    <div class="nine mt-3">
+        <h1>Working<span> with colors</span></h1>
+    </div>
+    <!-- Style is defined in styles\headers.css -->
+    <h2 id="text_image">Image Text</h2>
+
+    <div class="container">
+        <img src="Lib/Images/img_snow_wide.png" alt="Snow" style="width: 100%;">
+        <div class="bottom-left">Bottom Left</div>
+        <div class="top-left">Top Left</div>
+        <div class="top-right">Top Right</div>
+        <div class="bottom-right">Bottom Right</div>
+        <div class="centered">Centered</div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+
+        });
+
+    </script>
+</body>
+</html>

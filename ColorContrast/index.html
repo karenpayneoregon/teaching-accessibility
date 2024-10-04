@@ -9,8 +9,14 @@
     <link href="Lib/styles/headers.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
 
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
     <!-- styles are here temp and once okay move to a .css file(s) -->
     <style>
+        p {
+            color: gray;
+        }
     </style>
 
 </head>
@@ -21,8 +27,28 @@
 
     <main>
         <div class="container">
-     
-   
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Color contrast</h2>
+                    <p>Color contrast is the difference in light between font and background colors. It is important for readability and accessibility.</p>
+                    <p>WCAG 2.0 requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text.</p>
+                    <p>Use the <a href="https://webaim.org/resources/contrastchecker/">WebAIM contrast checker</a> to check the contrast ratio of your colors.</p>
+                </div>
+                <div class="col-md-6">
+                    <h2>Color blindness</h2>
+                    <p>Color blindness is a vision deficiency that affects the perception of color. It is important to consider color blindness when designing websites.</p>
+                    <p>Use the <a href="https://www.toptal.com/designers/colorfilter/">Toptal color filter tool</a> to simulate color blindness.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div>
+                    <a href="https://color.adobe.com/create/color-contrast-analyzer">Adobe color contrast analyzer</a>
+                </div>
+            </div>
+
+
+
         </div>
         
     </main>
@@ -44,8 +70,21 @@
 
             });
 
+            setTargetBlank();
 
         });
+
+        /*
+         * set all hyperlinks to open on a new page
+         */
+        function setTargetBlank() {
+            const links = document.querySelectorAll('a');
+
+            links.forEach(link => {
+                link.setAttribute('target', '_blank');
+            });
+        }
+
 
 
     </script>
