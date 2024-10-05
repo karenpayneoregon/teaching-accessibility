@@ -6,17 +6,24 @@
     <title>Working with images</title>
 
     <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="Lib/scripts/effects.js"></script>
     <link href="Lib/styles/cityResponsive.css" rel="stylesheet" />
     <link href="Lib/styles/headers.css" rel="stylesheet" />
     <link href="Lib/styles/imagehover.css" rel="stylesheet" />
     <link href="Lib/styles/effects.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
+    <script src="Lib/scripts/imageDescriptions.js"></script>
 
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
 
     <!-- styles are here temp and once okay move to a .css file(s) -->
     <style>
+        mark {
+            background-color:lightgoldenrodyellow;
+
+        }
+         
     </style>
 
 </head>
@@ -41,14 +48,19 @@
 
             <div class="row">
                 <div class="col-12 text-center">
-                    <button id="setter" class="btn btn-dark btn-sm">Set alt for above image</button>
+                    <button
+                        id="setter"
+                        class="btn btn-dark btn-sm">
+                        Set alt for above image
+                    </button>
                 </div>
 
             </div>
+
             <div class="demo">
                 <!-- one of 44 effects -->
                 <figure class="imghvr-fall-away-horiz">
-                    <img id="cityImage" src="Lib/Images/City.png" />
+                    <img id="cityImage" src="Lib/Images/Cinque-Terre-Liguria.png" />
                     <figcaption>
                         <h2>About</h2>
                         <p>The Cinque Terre are a coastal area within <mark>Liguria</mark>, in the northwest of Italy.</p>
@@ -60,41 +72,9 @@
         
 
     </main>
-
+    
+    <!-- for experimentation, once good to go place in a .js file  -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-
-            /*
-             * Provides the ability to add outlines to every single element on a page
-             * Usage: Pass true to toggle for development environment, false for other environments
-             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
-            */
-            document.addEventListener('keydown', function (event) {
-
-                if (event.key === '1' && event.altKey && event.ctrlKey) {
-                    // this is for development environment
-                    $debugHelper.toggle(true);
-                }
-
-            });
-
-            /*
-             * The following code sets the alt tag for each image based on the file name
-             * which is only good with decent file names.
-             */
-            const images = document.querySelectorAll('img');
-            images.forEach(image => {
-                const id = image.id;
-                image.alt = document.getElementById(id).src.split("/").pop().split(".")[0];
-            });
-
-        });
-
-        /*
-         * example to set an image alt attribute dynamically
-         * The code above will have set the alt tag to van, this
-         * will overwrite it.
-         */
         document.getElementById("setter").addEventListener("click", function () {
             document.getElementById("van").setAttribute("alt", "Karen's van");
         });
