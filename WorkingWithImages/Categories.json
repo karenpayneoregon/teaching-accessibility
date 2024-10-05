@@ -1,0 +1,18 @@
+[
+  {
+    "CategoryId": 1,
+    "CategoryName": "Shopping list"
+  },
+  {
+    "CategoryId": 2,
+    "CategoryName": "Today"
+  },
+  {
+    "CategoryId": 3,
+    "CategoryName": "Next week"
+  },
+  {
+    "CategoryId": 4,
+    "CategoryName": "Appointments"
+  }
+]

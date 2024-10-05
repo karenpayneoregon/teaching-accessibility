@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set the alt tag for each image based a mapper, alternative to the code based on dashes in file name.
     setImageAlt(document);
 
+    readJsonFile('Categories.json');
+
+
     /*
      * Provides the ability to add outlines to every single element on a page
      * Usage: Pass true to toggle for development environment, false for other environments
