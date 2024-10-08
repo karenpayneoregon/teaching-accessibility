@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Note lang -->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Working with tables</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+
+    <script src="Lib/scripts/jsonOperations.js"></script>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Working<span> with tables</span></h1>
+    </div>
+
+    <main>
+        <div id="main_table" class="container"></div>
+    </main>
+
+<script>
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        /*
+         * Create an HTML from a json file
+         */
+        $jsonHelpers.createDynamicTableWithJsonData(document);
+
+        /*
+         * Provides the ability to add outlines to every single element on a page
+         * Usage: Pass true to toggle for development environment, false for other environments
+         * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+        */
+        document.addEventListener('keydown', function (event) {
+
+            if (event.key === '1' && event.altKey && event.ctrlKey) {
+                // this is for development environment
+                $debugHelper.toggle(true);
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "userId": 1,
+    "firstName": "Anne",
+    "lastName": "Lee",
+    "gender": "F"
+  },
+  {
+    "userId": 2,
+    "firstName": "Jerry",
+    "lastName": "Jackson",
+    "gender": "M"
+  },
+  {
+    "userId": 3,
+    "firstName": "Hank",
+    "lastName": "Lebow",
+    "gender": "M"
+  },
+  {
+    "userId": 4,
+    "firstName": "Mary Jane",
+    "lastName": "Jones",
+    "gender": "F"
+  },
+  {
+    "userId": 5,
+    "firstName": "Karen",
+    "lastName": "Payne",
+    "gender": "F"
+  }
+]
