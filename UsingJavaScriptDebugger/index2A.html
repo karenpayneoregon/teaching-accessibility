@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>UI Center example</title>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+    
+    <!--Bootstrap 5-->
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+    <script src="lib/debugHelper.js"></script>
+    <script src="lib/masterFooterHelper.js"></script>
+
+    <style>
+        a {
+            color: #15709c;
+            text-decoration: none !important;
+        }
+
+        .or-gov-head {
+            background-color: #0F506F !important;
+            text-decoration: none !important;
+            color: #FFFFFF !important;
+            font-size: 14px;
+            height: 42px;
+            width: 100%;
+        }
+
+            .or-gov-head a {
+                color: white;
+                font-size: 14px;
+                text-decoration: none !important;
+                color: #FFFFFF !important;
+            }
+
+                .or-gov-head a:visited {
+                    color: white;
+                    font-size: 14px;
+                    text-decoration: none !important;
+                    color: #FFFFFF !important;
+                }
+
+        #outer {
+            border: 0.05em solid red;
+            width:100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+<body>
+<div class="or-gov-head" style="background-color: #0f506f;">
+    <div class="float-start">
+        <a href="https://www.emp.state.or.us/" alt="Oregon Employment Department"><img src="https://www11.emp.state.or.us/graphics/jpg/header_logo_ogov_2019.jpg" alt="Oregon Employment Department">Employment Department</a>
+    </div>
+    <div class="float-end pt-2 pe-2">
+        <div id="google_translate_element"></div>
+    </div>
+</div>
+<main>
+
+</main>
+<div class="container">
+    <h1 class="fs-4 mt-5 mb-4 d-flex justify-content-center">UI Center</h1>
+</div>
+
+<div class="container  d-flex justify-content-center">
+
+    <div id="outer" class="shadow border border-dark-subtle w-75">
+        <div>
+
+            <div class="card border-0">
+                <div class="card-body text-center m-0">
+                    <span class="fw-bold">Toll free Phone</span><br/>
+                    877-345-3484
+                </div>
+            </div>
+
+            <div class="card border-0">
+                <div class="card-body text-center">
+                    <span class="fw-bold">Fax</span><br/>
+                    866-345-1878
+                </div>
+            </div>
+
+            <div class="card border-0">
+                <div class="card-body text-center">
+                    <span class="fw-bold">Address</span><br/>
+                    PO Box 14135<br/>
+                    Salem, OR 97309-5068
+                </div>
+            </div>
+
+            <div class="card border-0">
+                <div class="card-body text-center">
+                    <span class="fw-bold">Weekly Claim Number</span><br/>
+                    800-982-8920
+                </div>
+            </div>
+
+            <div class="text-center">
+                <strong>
+                    Enter your claim using
+                    <a href="https://frances.oregon.gov">
+                        Frances Online
+                        <br>
+                        <img src="https://www11.emp.state.or.us/graphics/png/FrancesOnline.PNG" alt="Frances Online">
+                    </a>
+                </strong>
+            </div>
+
+            <div class="text-center mt-3 mb-2">Unemployment Insurance claims are no longer handled through our Local Employment Offices.</div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<script>
+    /*
+     * Provides the ability to add outlines to every single element on a page
+     * Usage: Pass true to toggle for development environment, false for other environments
+     * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+    */
+    document.addEventListener('keydown',
+        function(event) {
+
+            if (event.key === '1' && event.altKey && event.ctrlKey) {
+                // this is for development environment
+                $debugHelper.toggle(true);
+            }
+
+        });
+
+
+    document.getElementById('main-content').addEventListener('submit',
+        function(event) {
+            event.preventDefault();
+            alert('Nothing to do here');
+        });
+
+</script>
+</body>
+</html>
