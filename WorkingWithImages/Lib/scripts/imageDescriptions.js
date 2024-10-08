@@ -11,6 +11,7 @@
  */
 function setImageAlt(document) {
 
+    // key is id of image, value is alt text
     const imageMapper = new Map([
         ['cityImage', "Cinque Terre Liguria"],
         ['van', "Karen's van on the run"]

@@ -108,6 +108,34 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SkipLinksExample", "SkipLin
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson 5 - tables", "Lesson 5 - tables", "{E71ACD96-4F96-42EF-B827-14361AC3B868}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UsingTables", "UsingTables\", "{C5FC7B35-E2B1-466E-A782-4699F4D7C5C2}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57621"
+		Debug.AspNetCompiler.PhysicalPath = "UsingTables\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57621\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57621"
+		Release.AspNetCompiler.PhysicalPath = "UsingTables\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57621\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57621"
+		SlnRelativePath = "UsingTables\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{BD7C4794-124F-44BA-992D-F5F86FCDFC9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkering", "Tinkering\Tinkering.csproj", "{4258726A-647E-4649-B4CF-DFAFC143F271}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,6 +158,14 @@ Global
 		{8B3A8E3C-5C6D-4459-AE71-E12A3DEEA700}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B3A8E3C-5C6D-4459-AE71-E12A3DEEA700}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{8B3A8E3C-5C6D-4459-AE71-E12A3DEEA700}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C5FC7B35-E2B1-466E-A782-4699F4D7C5C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5FC7B35-E2B1-466E-A782-4699F4D7C5C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5FC7B35-E2B1-466E-A782-4699F4D7C5C2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5FC7B35-E2B1-466E-A782-4699F4D7C5C2}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4258726A-647E-4649-B4CF-DFAFC143F271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4258726A-647E-4649-B4CF-DFAFC143F271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4258726A-647E-4649-B4CF-DFAFC143F271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4258726A-647E-4649-B4CF-DFAFC143F271}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +175,8 @@ Global
 		{933AC0F8-3BEE-4DED-A94E-E91E60D8C842} = {125839E0-CAA9-4199-8BC1-EDA7F9D4CAAB}
 		{8FDB4770-C344-419C-A9EC-46FBC66F0FE7} = {F3F37CA1-6DAB-4BE1-8B34-CFB4BE9B33FD}
 		{8B3A8E3C-5C6D-4459-AE71-E12A3DEEA700} = {B203A879-DE81-46A5-A4AE-5EF4ACC9DB17}
+		{C5FC7B35-E2B1-466E-A782-4699F4D7C5C2} = {E71ACD96-4F96-42EF-B827-14361AC3B868}
+		{4258726A-647E-4649-B4CF-DFAFC143F271} = {BD7C4794-124F-44BA-992D-F5F86FCDFC9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22F7B927-71C5-47DC-AC95-9D7B7AC43F1F}
