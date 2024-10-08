@@ -16,6 +16,8 @@ Provides code to teach proper techniques for accessibility conformance to [WCAG 
 | `LabelsAndInputs`  | Associating labels and inputs  |
 | `Working with images`  | How to work with images  |
 | `ColorContrast`  | How to fix color contrast issues  |
+| `SkipLinksExample`  | Basic skip link example  |
+| `Using tables`  | Static and file driven accessible tables  |
 
 ## Bootstrap
 
