@@ -3,18 +3,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Color contrast</title>
+    <title>Working with tables</title>
 
     <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="Lib/styles/headers.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
+    <link href="Lib/index.css" rel="stylesheet" />
 
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
 
     <!-- styles are here temp and once okay move to a .css file(s) -->
     <style>
-
     </style>
 
 </head>
@@ -25,11 +25,88 @@
 
     <main>
         <div class="container">
-   
-            <div class="row">
 
-            </div>
+            <!-- Valid with Wave extension with caption hidden but screen reader reads the caption -->
+            <table class="table table-light table-bordered caption-top mb-3 shadow">
+                <caption class="visually-hidden position-relative">First table</caption>
+                <thead class="table-success">
+                <th scope="col">First name</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                </thead>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>M</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                    <td>F</td>
+                </tr>
+            </table>
+
+            <hr class="style14" />
+
+            <!-- Valid with Wave extension without caption and using thead rather than TR. -->
+            <table class="table  table-bordered caption-top mb-3 shadow">
+                <thead class="table-primary">
+                <th scope="col">First name</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                </thead>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>M</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                    <td>F</td>
+                </tr>
+            </table>
+
+            <hr class="style14" />
+
+            <!-- Valid with Wave extension -->
+            <table class="table table-light table-bordered caption-top shadow mb-5">
+                <tr>
+                    <th scope="col">First name</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>M</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                    <td>F</td>
+                </tr>
+            </table>
+
+            <hr class="style14" />
+
+            <!-- This table will be flagged by Wave extension as there is not th section -->
+            <table class="table table-danger table-bordered border-dark caption-top mb-3 shadow">
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>M</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                    <td>F</td>
+                </tr>
+            </table>
+
         </div>
+
+
 
     </main>
 

@@ -1,1 +1,3 @@
 ﻿# About
+
+Simply put tinkering.

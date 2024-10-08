@@ -32,6 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 		screenReaders.md = screenReaders.md
 		stash.md = stash.md
+		wave.md = wave.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson 1 - labels inputs", "Lesson 1 - labels inputs", "{20BD4C04-0B50-4494-8F17-DF3E01CC6717}"
