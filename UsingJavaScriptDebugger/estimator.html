@@ -2,15 +2,16 @@
 <html lang="en">
 
 <!------------------------------------------------------------------------------
-Karen Payne notes
+Karen Payne 10/09/2024
 First edited this page with Chrome overrides than copied to this file.
 Next, made necessary changes to make it work with the new overrides.
 In summary, the following changes were made:
 - Went from Bootstrap 4 to 5
 - Commented out many .css files
 - No jQuery now
-- Styles inline may be moved to a .css file
+- Styles inline may be moved to a .css file, left here for conversion process.
 - Changed submits from input to Bootstrap buttons and commented out the inputs.
+- row stripe1 and stripe2 borders are Bootstrap but can be done with vanilla styling
 ------------------------------------------------------------------------------->
 
 <head>
@@ -149,6 +150,19 @@ In summary, the following changes were made:
             font-weight: bold;
         }
 
+            .footer a:visited {
+                color: #FFFFFF !important;
+                text-decoration: none !important;
+                font-weight: bold;
+            }
+
+            .footer a {
+                text-decoration: none !important;
+                color: #FFFFFF !important;
+                font-weight: bold;
+            }
+
+
         .inputdiv {
             padding-top: 2px;
             margin-bottom: .5em;
@@ -156,8 +170,8 @@ In summary, the following changes were made:
 
         /* Karen */
         .p-main {
-            margin-left:12px;
-            margin-right:10px;
+            margin-left: 12px;
+            margin-right: 10px;
         }
 
         /* Karen*/
@@ -199,54 +213,54 @@ In summary, the following changes were made:
 
 
 
-<style id="antiClickjack">
-    body {
-        display: none !important;
-    }
-</style>
+    <style id="antiClickjack">
+        body {
+            display: none !important;
+        }
+    </style>
 
-<script>
+    <script>
 
-    if (self === top) {
-        var antiClickjack = document.getElementById("antiClickjack");
-        antiClickjack.parentNode.removeChild(antiClickjack);
-    } else {
-        top.location = self.location;
-    }
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
 
-    if (top.frames.length != 0) {
-        top.location = self.document.location;
-    }
-</script>
+        if (top.frames.length != 0) {
+            top.location = self.document.location;
+        }
+    </script>
 
-<div id="secondary">
+    <div id="secondary">
 
-    <div class="container-fluid">
-        <div class="breadcrumb">
+        <div class="container-fluid">
+            <div class="breadcrumb">
 
-            <span> <a href="/public/index.cfm?u=ocs_app">Home</a> </span>
-            <span>&nbsp;/&nbsp;</span>
-            <span> <a href="https://unemployment.oregon.gov/">Unemployment</a> </span>
-            <span>&nbsp;/&nbsp;</span>
-            <span> Online Claims </span>
+                <span> <a href="/public/index.cfm?u=ocs_app">Home</a> </span>
+                <span>&nbsp;/&nbsp;</span>
+                <span> <a href="https://unemployment.oregon.gov/">Unemployment</a> </span>
+                <span>&nbsp;/&nbsp;</span>
+                <span> Online Claims </span>
 
+            </div>
         </div>
     </div>
-</div>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT }, 'google_translate_element');
-    }
-</script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT }, 'google_translate_element');
+        }
+    </script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 
-<div class="container">
+
+    <div class="container">
 
         <style>
             .outageDivStyle {
@@ -276,7 +290,7 @@ In summary, the following changes were made:
 
     <link rel="stylesheet" type="text/css" href="/ocs/estimator/estimator.css" />
     <br>
-    
+
 
     <style>
         .stripe1 {
@@ -362,20 +376,19 @@ In summary, the following changes were made:
             </div>
 
             <form name="form1" method="POST" action="result.cfm" class="form w-75">
-                <input type="hidden" 
-                       name="nextQS" 
-                       value="September 29, 2024"> 
+                <input type="hidden"
+                       name="nextQS"
+                       value="September 29, 2024">
                 <input type="hidden" name="nextQE" value="December 28, 2024">
 
-
-                <div class="row stripe1" style="margin-left:12px;">
+                <div class="row stripe1 border border-dark border-bottom-0" style="margin-left: 12px;">
                     <div class="col-md-4 column1">
                         <h2>
-                            <div >1st quarter: 2023/2</div>
-                            <div >04/01/2023 To 06/30/2023:</div>
+                            <div>1st quarter: 2023/2</div>
+                            <div>04/01/2023 To 06/30/2023:</div>
                         </h2>
                     </div>
-                    <div class="col-4 inputdiv">
+                    <div class="col-md-4 inputdiv">
                         <label for="q1wage">
                             Total wages paid:
                             <input type="text" class="form-control mb-2" id="q1wage" name="q1wage">
@@ -389,7 +402,7 @@ In summary, the following changes were made:
                     </div>
                 </div>
 
-                <div class="row stripe2" style="margin-left:12px;">
+                <div class="row stripe2 border border-dark border-bottom-0 border-top-0" style="margin-left: 12px;">
                     <div class="col-md-4 column1">
                         <h2>
                             2nd quarter: 2023/3<br />
@@ -410,7 +423,7 @@ In summary, the following changes were made:
                     </div>
                 </div>
 
-                <div class="row stripe1" style="margin-left:12px;">
+                <div class="row stripe1 border border-dark border-bottom-0 border-top-0" style="margin-left: 12px;">
                     <div class="col-md-4 column1">
                         <h2>
                             3rd quarter: 2023/4<br />
@@ -431,7 +444,7 @@ In summary, the following changes were made:
                     </div>
                 </div>
 
-                <div class="row stripe2" style="margin-left:12px;">
+                <div class="row stripe2 border border-dark border-bottom-0 border-top-0" style="margin-left: 12px;">
                     <div class="col-md-4 column1">
                         <h2>
                             4th quarter: 2024/1<br />
@@ -452,7 +465,7 @@ In summary, the following changes were made:
                     </div>
                 </div>
 
-                <div class="row stripe1" style="margin-left:12px;">
+                <div class="row stripe1 border border-dark border-top-0" style="margin-left: 12px;">
                     <div class="col-md-4 column1">
                         <h2>
                             5th quarter: 2024/2<br />
@@ -472,7 +485,6 @@ In summary, the following changes were made:
                         </label>
                     </div>
                 </div>
-
 
                 <div class="row bg-white" style="margin-left: 12px;">
                     <div class="text-center inputdiv" style="margin-top: .25em;">
@@ -499,22 +511,22 @@ In summary, the following changes were made:
     <script>
 
 
-    document.addEventListener("DOMContentLoaded", () => {
-        /*
-         * Used for CSS debugging, for production pass false to toggle function or comment out.
-         */
-        document.addEventListener('keydown', function (event) {
+        document.addEventListener("DOMContentLoaded", () => {
+            /*
+             * Used for CSS debugging, for production pass false to toggle function or comment out.
+             */
+            document.addEventListener('keydown', function (event) {
 
-            if (event.key === '1' && event.altKey && event.ctrlKey) {
-                // this is for development environment
-                $debugHelper.toggle(true);
-            }
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
 
         });
-
-
-    });
-</script>
+    </script>
 
 </body>
 </html>
