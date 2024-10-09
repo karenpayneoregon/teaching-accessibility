@@ -57,7 +57,7 @@ $jsonHelpers = function () {
         dynamicTable.appendChild(thead);
 
         // read json file with people
-        var json = $jsonHelpers.getJson('people.json');
+        var json = getJson('people.json');
 
         for (let index = 0; index < json.length; index++) {
 
