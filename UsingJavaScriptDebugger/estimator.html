@@ -1,0 +1,498 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<!-- 
+    Notes
+
+-->
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Unemployment Insurance Estimator</title>
+
+    <link rel="icon" href="https://www11.emp.state.or.us/graphics/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www11.emp.state.or.us/graphics/favicon.ico" type="image/x-icon">
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="lib/footerHelper.js"></script>
+    <script src="lib/debugHelper.js"></script>
+    <!--<script src="/headfoot/mobile/js/jquery_3_3_1/jquery-3.3.1.min.js"></script>
+    <script src="/headfoot/mobile/js/bootstrap.4.2.1.min.js"></script>
+    <link href="/headfoot/mobile/css/bootstrap-grid.4.2.1.min.css" rel="stylesheet" />
+    <link href="/headfoot/mobile/css/bootstrap.4.2.1.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/headfoot/mobile/css/ogov.css">
+    <link rel="stylesheet" type="text/css" href="/headfoot/mobile/css/claim.css">
+    <link rel="stylesheet" type="text/css" href="/headfoot/mobile/css/desktop.css" media="only screen and (min-width: 768px)" />
+    <link rel="stylesheet" type="text/css" href="/headfoot/mobile/css/tablet.css" media="only screen and (max-width: 767px)" />
+    <link rel="stylesheet" type="text/css" href="/headfoot/mobile/css/phone.css" media="only screen and (max-width: 440px)" />
+    <link href="/headfoot/mobile/css/oed-bootstrap-spacing.css" rel="stylesheet" />-->
+
+    <meta name="google-translate-customization" content="3a12915a8a4f06b2-30f606f66b0f1e19-g9ac67b02622c6f55-22">
+
+
+
+
+    <style>
+        .breadcrumb {
+            padding: 2px 15px;
+            font-size: 15px;
+            background-color: inherit;
+            margin-top: -45px;
+            margin-bottom: 2px;
+        }
+
+        .container-fluid {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .table_ocs_extra {
+            width: 100%;
+        }
+
+        .table_ocs {
+            font-size: .9em;
+        }
+
+        .pad {
+            padding-left: 10%;
+        }
+
+        .navbar {
+            position: relative;
+            min-height: 0px !important;
+            padding: 0px !important;
+        }
+
+        .goog-te-gadget-simple .goog-te-menu-value {
+            color: #000000 !important;
+        }
+
+        .footer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            background-color: #0F506F;
+            color: #FFFFFF !important;
+            text-align: center;
+            font-weight: bold;
+        }
+        .footer a {
+            color: #FFFFFF !important;
+        }
+
+        .spacer {
+            margin-bottom: 270px; /* how high is your footer? */
+            visibility: hidden;
+        }
+
+        .rowSpacer {
+            height: 20px;
+        }
+
+        .clear {
+            clear: both;
+            height: 60px;
+        }
+
+        .or-gov-head {
+            background-color: #0F506F !important;
+            text-decoration:none !important;
+            color: #FFFFFF !important;
+            font-size:14px;
+            height: 42px;
+        }
+
+        .or-gov-head a {
+            color: white;
+            font-size:14px;
+            text-decoration:none !important;
+            color: #FFFFFF !important;
+        }
+
+        .or-gov-head a:visited {
+            color: white;
+            font-size:14px;
+            text-decoration:none !important;
+            color: #FFFFFF !important;
+        }
+
+        .footer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            background-color: #0F506F;
+            color: #FFFFFF !important;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .inputdiv {
+            padding-top: 2px;
+        }
+    </style>
+
+    <!-- Google Analytics skipped in server mode: 'DEV' -->
+    <!-- would have used url: 'page_path': '/ocs/estimator/index.cfm/lang/E'  application: 'OCS Estimator'   google_id: 'UA-123755448-2'  group: 'OCS-2'  -->
+</head>
+
+<body>
+    
+    <div class="container-fluid shadow-sm mb-5">
+        <table id="Oregon.gov_Header" cellpadding="0" border="0" cellspacing="0" width="100%" Summary="Agency Banner Formatting">
+
+            <tr class="or-gov-head" bgcolor="0f506f">
+                <td>
+                    <div class="or-gov-head">
+                        <font style="vertical-align: inherit;">
+                            <a href="https://www.emp.state.or.us/">
+                                <img src="https://www11.emp.state.or.us/graphics/jpg/header_logo_ogov_2019.jpg"
+                                     alt="Oregon Dot Gov Logo - Link to Employment Home Page" />Employment Department
+                            </a>
+                        </font>
+                    </div>
+                </td>
+                <td nowrap="true">
+                    <div class="float-end">
+                        <div id="google_translate_element"></div>
+                    </div>
+                </td>
+                <td nowrap="true">&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <style id="antiClickjack">
+        body {
+            display: none !important;
+        }
+    </style>
+    <script>
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+
+        if (top.frames.length != 0) {
+            top.location = self.document.location;
+        }</script>
+
+
+
+
+
+    <div id="secondary">
+        <div class="container-fluid">
+            <div class="breadcrumb">
+
+                <span> <a href="/public/index.cfm?u=ocs_app">Home</a> </span>
+                <span>&nbsp;/&nbsp;</span>
+                <span> <a href="https://unemployment.oregon.gov/">Unemployment</a> </span>
+                <span>&nbsp;/&nbsp;</span>
+                <span> Online Claims </span>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT }, 'google_translate_element');
+        }</script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+    <div class="container">
+
+
+        <style>
+            .outageDivStyle {
+                background-color: #fed873;
+                border: solid white 1px;
+                font-size: 12pt;
+                padding: 6px;
+                font-family: Verdana, Geneva, sans-serif;
+            }
+
+            .alert-warning {
+                color: #856404;
+                background-color: #fff3cd;
+                border-color: #ffeeba;
+            }
+
+            .alert {
+                position: relative;
+                padding: 0.75rem 1.25rem;
+                margin-bottom: 1rem;
+                border: 1px solid transparent;
+                border-radius: 0.25rem;
+            }
+        </style>
+
+
+
+
+
+
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="/ocs/estimator/estimator.css" />
+    <br>
+
+
+
+    <style>
+        .stripe1 {
+            background-color: #C5C5BA;
+        }
+
+        .stripe2 {
+            background-color: #F4F4F7;
+        }
+
+        .column1 {
+            /* for single column layout on tablet/phone. top margin first column goes UP */
+            background-color: #547d90;
+            color: #ffffff;
+            margin-top: 1px;
+            padding-top: 2px;
+        }
+
+        .inputdiv {
+            padding-top: 2px;
+        }
+
+        .bluetop {
+            /* border-top: 6px solid #547d90; */
+        }
+
+        /* if screen > 975 (3-column layout) top margin is 0*/
+        @media (min-width: 975px) {
+
+            .column1 {
+                background-color: #547d90;
+                color: #ffffff;
+                margin-top: 0;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <main>
+            <div class="row">
+                <div style="text-align:center;">
+
+                    <h1 style="font-size: 22px; margin-left: 12px; margin-right: 12px;">
+                        Unemployment Insurance Estimator
+                    </h1>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p style="margin-left:12px;margin-right:10px;">
+                        This site allows you to estimate how much your Oregon Unemployment
+                        Insurance Benefits will be before you file a new unemployment insurance
+                        claim. If you are receiving, or have received benefits on an existing
+                        claim, that claim must expire before a new claim can be filed.
+                    </p>
+
+                    <p style="margin-left:12px;margin-right:10px;">
+                        For a detailed description of how the weekly benefit amount is calculated,
+                        please see the Unemployment Insurance Claimant Handbook available at:
+                        <b><a href="https://unemployment.oregon.gov/file-a-claim#main" target="_uihb">How to Apply for Unemployment Insurance Benefits</a></b>.
+                    </p>
+                    <p style="margin-left:12px;margin-right:10px;">
+                        Please enter the gross wages (amounts earned before taxes were withheld)
+                        paid to you in the quarters indicated below. If you were not paid wages
+                        during a given quarter, enter zero for that quarter. When entering
+                        your wages, do not enter dollar signs, decimal points, or cents.
+                    </p>
+                    <p style="margin-left:12px;margin-right:10px;">
+                        You may use pay stubs and/or W2 forms to determine your wages. If
+                        you use the wage information on a W2 form, convert the yearly amount
+                        reported into quarterly amounts. Include wages paid for work performed
+                        in another state, for the federal government and for the military.
+                    </p>
+                    <p style="margin-left:12px;margin-right:10px;">
+                        <strong>Note:</strong> This is an estimate only, based on the information
+                        you provide. Your actual benefit amount may be different. <br>
+                    </p><br />
+
+
+                </div>
+            </div>
+
+            <form name="form1" method="POST" action="result.cfm" class="form">
+                <input type="hidden" name="nextQS" value="September 29, 2024"> <input type="hidden" name="nextQE" value="December 28, 2024">
+
+
+                <div class="row stripe1" style="margin-left:12px;">
+                    <div class="form-group col-md-4 column1">
+                        <h2 style="font-size:20px;background-color:#50788B">
+                            1st quarter: 2023/2<br />
+                            04/01/2023 To 06/30/2023:
+                        </h2>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q1wage">
+                            Total wages paid:
+                            <input type="text" class="form-control mb-2" id="q1wage" name="q1wage">
+                        </label>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q1hours">
+                            Total hours:
+                            <input type="text" class="form-control" id="q1hours" name="q1hours">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row stripe2" style="margin-left:12px;">
+                    <div class="form-group col-md-4 column1">
+                        <h2 style="font-size:20px;background-color:#50788B">
+                            2nd quarter: 2023/3<br />
+                            07/01/2023 To 09/30/2023:
+                        </h2>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q2wage">
+                            Total wages paid:
+                            <input type="text" class="form-control mb-2" id="q2wage" name="q2wage">
+                        </label>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q2hours">
+                            Total hours:
+                            <input type="text" class="form-control" id="q2hours" name="q2hours">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row stripe1" style="margin-left:12px;">
+                    <div class="form-group col-md-4 column1">
+                        <h2 style="font-size:20px;background-color:#50788B">
+                            3rd quarter: 2023/4<br />
+                            10/01/2023 To 12/31/2023:
+                        </h2>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q3wage">
+                            Total wages paid:
+                            <input type="text" class="form-control mb-2" id="q3wage" name="q3wage">
+                        </label>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q3hours">
+                            Total hours:
+                            <input type="text" class="form-control" id="q3hours" name="q3hours">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row stripe2" style="margin-left:12px;">
+                    <div class="form-group col-md-4 column1">
+                        <h2 style="font-size:20px;background-color:#50788B">
+                            4th quarter: 2024/1<br />
+                            01/01/2024 To 03/31/2024:
+                        </h2>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q4wage">
+                            Total wages paid:
+                            <input type="text" class="form-control" id="q4wage" name="q4wage">
+                        </label>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q4hours">
+                            Total hours:
+                            <input type="text" class="form-control mb-2" id="q4hours" name="q4hours">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row stripe1" style="margin-left:12px;">
+                    <div class="form-group col-md-4 column1">
+                        <h2 style="font-size:20px;background-color:#50788B">
+                            5th quarter: 2024/2<br />
+                            04/01/2024 To 06/30/2024:
+                        </h2>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q5wage">
+                            Total wages paid:
+                            <input type="text" class="form-control mb-2" id="q5wage" name="q5wage">
+                        </label>
+                    </div>
+                    <div class="form-group col-md-4 inputdiv">
+                        <label for="q5hours">
+                            Total hours:
+                            <input type="text" class="form-control" id="q5hours" name="q5hours">
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="row stripe2" style="margin-left: 12px;">
+                    <div class="form-group  text-center inputdiv" style="margin-top: .25em;">
+                        <input type="submit" name="Submit" value=" Click Here to Estimate Your Payments ">
+                        &nbsp;&nbsp;
+                        <input type="reset" name="Submit2" value=" Reset ">
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="indexFooter" class="footer">
+        <a href="/public/index.cfm?u=from_estimator">
+            Return to Employment Department Home
+        </a>
+    </div>
+
+
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+
+        });
+    </script>
+
+</body>
+</html>
+
+
+
