@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/*  I want the skip link to overlay page content when visible, so I'll set it as position: absolute;, but first I need to set the body element to position: relative; */
+body {
+    position: relative;
+}
+
+fieldset {
+    padding: 5px;
+}
+
+.fieldset-auto-width {
+    display: inline-block;
+}
+
+legend {
+    background: blue;
+    color: white;
+    border: solid 1px black;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.ledgendSpan {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*  Add some base styles to make it prominent and readable */
+.skip-link {
+    position: absolute;
+    display: inline-block;
+    padding: .375rem .75rem;
+    line-height: 1;
+    font-size: 1.25rem;
+    background-color: blue;
+    color: white;
+    /* Ensure the Y position is set to zero and any movement on the transform property */
+    transform: translateY(0);
+    transition: transform 250ms ease-in;
+}
+
+    /*  This skip link will slide down from the top, so when it is not focused, I'm setting it's position on the Y axis to -2rem, because the total height of my skip link is 2rem: 1.25rem (font-size) and 2 * .375rem (vertical padding) = 2rem */
+    .skip-link:not(:focus) {
+        transform: translateY(-2rem);
+    }
+
+    /*  I'm setting the outline to invisible here, as the skip link being visible is the focus indicator, in this case */
+    .skip-link:focus {
+        outline: transparent solid 2px;
+    }
+
+
+main {
+    padding: 2rem;
+}
+
+/* Just to be helpful, add a visual indicator to show focus is on the page title */
+h1:focus span {
+    outline: 2px solid rebeccapurple;
+}
+
+/*  Hide the browser focus ring, we don't need 2 */
+h1:focus {
+    outline: 2px solid transparent;
+}
+
+
+div.form {
+    display: block;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+
+
+
+
+body {
+    margin: 0;
+}
+
+.one {
+    margin: 50px auto 20px auto;
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+    width: 500px;
+}
+
+.two p {
+    font-family: 'Lato';
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 32px;
+}
+
+.one a {
+    font-family: 'Lato';
+    text-decoration: none;
+    font-size: 26px;
+    color: #000;
+    font-weight: 900;
+    margin: 0 20px 0 0;
+    position: relative;
+}
+
+.one a:before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    content: '';
+    -webkit-transform: translateY(8px);
+    opacity: 0;
+    transition-property: -webkit-transform, opacity;
+    transition-duration: .3s;
+}
+
+.one a:hover:before {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+}
+
+.two {
+    margin: 0px auto;
+    width: 500px;
+}
+
+.two a {
+    font-family: 'Lato';
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+    font-weight: 300;
+    margin: 0 2px;
+    position: relative;
+}
+
+.two a:before {
+    position: absolute;
+    margin: 0 auto;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    content: '';
+    opacity: .3;
+    -webkit-transform: scaleX(.9);  
+    transition-property: opacity, -webkit-transform;
+    transition-duration: .3s;
+}
+
+.two a:hover:before {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+}

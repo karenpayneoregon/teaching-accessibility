@@ -161,6 +161,30 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UsingJavaScriptDebugger", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prototypes", "Prototypes", "{25F151FC-A8F2-4BFF-8FF9-C09ACB91ED32}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tinkering", "Tinkering", "{A685898A-BB37-4E5A-8486-2D67A0441FCC}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BorderAnimation", "BorderAnimation\", "{5E40F45E-4963-4F75-8DDC-6C9FE47AC668}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65400"
+		Debug.AspNetCompiler.PhysicalPath = "BorderAnimation\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65400\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65400"
+		Release.AspNetCompiler.PhysicalPath = "BorderAnimation\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65400\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65400"
+		SlnRelativePath = "BorderAnimation\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +219,10 @@ Global
 		{B48E04B1-AAD7-461F-B0B4-340BCFFD14F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B48E04B1-AAD7-461F-B0B4-340BCFFD14F1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{B48E04B1-AAD7-461F-B0B4-340BCFFD14F1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5E40F45E-4963-4F75-8DDC-6C9FE47AC668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E40F45E-4963-4F75-8DDC-6C9FE47AC668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E40F45E-4963-4F75-8DDC-6C9FE47AC668}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E40F45E-4963-4F75-8DDC-6C9FE47AC668}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -205,8 +233,10 @@ Global
 		{8FDB4770-C344-419C-A9EC-46FBC66F0FE7} = {F3F37CA1-6DAB-4BE1-8B34-CFB4BE9B33FD}
 		{8B3A8E3C-5C6D-4459-AE71-E12A3DEEA700} = {B203A879-DE81-46A5-A4AE-5EF4ACC9DB17}
 		{C5FC7B35-E2B1-466E-A782-4699F4D7C5C2} = {E71ACD96-4F96-42EF-B827-14361AC3B868}
+		{BD7C4794-124F-44BA-992D-F5F86FCDFC9C} = {A685898A-BB37-4E5A-8486-2D67A0441FCC}
 		{4258726A-647E-4649-B4CF-DFAFC143F271} = {BD7C4794-124F-44BA-992D-F5F86FCDFC9C}
 		{B48E04B1-AAD7-461F-B0B4-340BCFFD14F1} = {25F151FC-A8F2-4BFF-8FF9-C09ACB91ED32}
+		{5E40F45E-4963-4F75-8DDC-6C9FE47AC668} = {A685898A-BB37-4E5A-8486-2D67A0441FCC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22F7B927-71C5-47DC-AC95-9D7B7AC43F1F}

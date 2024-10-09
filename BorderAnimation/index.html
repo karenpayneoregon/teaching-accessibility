@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<!-- Note lang -->
+<html lang="en">
+<head>
+    <title>Karen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="Lib/debugHelper.js"></script>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <style>
+        html, body {
+            text-align: center;
+            height: 100%;
+            overflow: hidden;
+        }
+        .svg-wrapper {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0 auto;
+            width: 320px;  
+        }
+        .shape {
+            stroke-dasharray: 140 540;
+            stroke-dashoffset: -474;
+            stroke-width: 8px;
+            fill: transparent;
+            stroke: crimson;
+            border-bottom: 5px solid black;
+            transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+        }
+        .text {
+            font-family: 'Roboto Condensed';
+            font-size: 22px;
+            line-height: 32px;
+            letter-spacing: 8px;
+            color: black;
+            top: -48px;
+            position: relative;
+            pointer-events: none;
+        }
+        .shape:hover {
+            stroke-width: 2px;
+            stroke-dashoffset: 0;
+            stroke-dasharray: 760;
+        }
+
+         
+    </style>
+
+
+</head>
+<body>
+<div class="nine mt-3">
+    <h1>animated<span> border</span></h1>
+</div>
+
+<main>
+    <div id="main_table" class="container">
+        <div class="svg-wrapper mt-5">
+            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                <rect class="shape" height="60" width="320" />
+                <div class="text">Karen Payne</div>
+            </svg>
+        </div>
+    </div>
+</main>
+
+<script>
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        /*
+         * Create an HTML from a json file
+         */
+        $jsonHelpers.createDynamicTableWithJsonData(document);
+
+        /*
+         * Provides the ability to add outlines to every single element on a page
+         * Usage: Pass true to toggle for development environment, false for other environments
+         * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+        */
+        document.addEventListener('keydown', function (event) {
+
+            if (event.key === '1' && event.altKey && event.ctrlKey) {
+                // this is for development environment
+                $debugHelper.toggle(true);
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
