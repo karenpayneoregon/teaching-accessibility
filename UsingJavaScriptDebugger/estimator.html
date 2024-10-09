@@ -1,10 +1,17 @@
 <!DOCTYPE HTML>
 <html lang="en">
 
-<!-- 
-    Notes
-
--->
+<!------------------------------------------------------------------------------
+Karen Payne notes
+First edited this page with Chrome overrides than copied to this file.
+Next, made necessary changes to make it work with the new overrides.
+In summary, the following changes were made:
+- Went from Bootstrap 4 to 5
+- Commented out many .css files
+- No jQuery now
+- Styles inline may be moved to a .css file
+- Changed submits from input to Bootstrap buttons and commented out the inputs.
+------------------------------------------------------------------------------->
 
 <head>
 
@@ -22,6 +29,7 @@
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <script src="lib/footerHelper.js"></script>
     <script src="lib/debugHelper.js"></script>
+
     <!--<script src="/headfoot/mobile/js/jquery_3_3_1/jquery-3.3.1.min.js"></script>
     <script src="/headfoot/mobile/js/bootstrap.4.2.1.min.js"></script>
     <link href="/headfoot/mobile/css/bootstrap-grid.4.2.1.min.css" rel="stylesheet" />
@@ -34,9 +42,6 @@
     <link href="/headfoot/mobile/css/oed-bootstrap-spacing.css" rel="stylesheet" />-->
 
     <meta name="google-translate-customization" content="3a12915a8a4f06b2-30f606f66b0f1e19-g9ac67b02622c6f55-22">
-
-
-
 
     <style>
         .breadcrumb {
@@ -88,19 +93,23 @@
             text-align: center;
             font-weight: bold;
         }
-        .footer a {
-            color: #FFFFFF !important;
-        }
 
+            .footer a {
+                color: #FFFFFF !important;
+            }
+
+        /* Karen*/
         .spacer {
             margin-bottom: 270px; /* how high is your footer? */
             visibility: hidden;
         }
 
+        /* Karen*/
         .rowSpacer {
             height: 20px;
         }
 
+        /* Karen*/
         .clear {
             clear: both;
             height: 60px;
@@ -108,25 +117,25 @@
 
         .or-gov-head {
             background-color: #0F506F !important;
-            text-decoration:none !important;
+            text-decoration: none !important;
             color: #FFFFFF !important;
-            font-size:14px;
+            font-size: 14px;
             height: 42px;
         }
 
-        .or-gov-head a {
-            color: white;
-            font-size:14px;
-            text-decoration:none !important;
-            color: #FFFFFF !important;
-        }
+            .or-gov-head a {
+                color: white;
+                font-size: 14px;
+                text-decoration: none !important;
+                color: #FFFFFF !important;
+            }
 
-        .or-gov-head a:visited {
-            color: white;
-            font-size:14px;
-            text-decoration:none !important;
-            color: #FFFFFF !important;
-        }
+                .or-gov-head a:visited {
+                    color: white;
+                    font-size: 14px;
+                    text-decoration: none !important;
+                    color: #FFFFFF !important;
+                }
 
         .footer {
             position: absolute;
@@ -143,6 +152,18 @@
         .inputdiv {
             padding-top: 2px;
         }
+
+        /* Karen */
+        .p-main {
+            margin-left:12px;
+            margin-right:10px;
+        }
+
+        /* Karen*/
+        h2 {
+            font-size: 20px;
+            background-color: #50788B
+        }
     </style>
 
     <!-- Google Analytics skipped in server mode: 'DEV' -->
@@ -150,7 +171,7 @@
 </head>
 
 <body>
-    
+
     <div class="container-fluid shadow-sm mb-5">
         <table id="Oregon.gov_Header" cellpadding="0" border="0" cellspacing="0" width="100%" Summary="Agency Banner Formatting">
 
@@ -177,52 +198,54 @@
 
 
 
-    <style id="antiClickjack">
-        body {
-            display: none !important;
-        }
-    </style>
-    <script>
-        if (self === top) {
-            var antiClickjack = document.getElementById("antiClickjack");
-            antiClickjack.parentNode.removeChild(antiClickjack);
-        } else {
-            top.location = self.location;
-        }
+<style id="antiClickjack">
+    body {
+        display: none !important;
+    }
+</style>
 
-        if (top.frames.length != 0) {
-            top.location = self.document.location;
-        }</script>
+<script>
 
+    if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+        top.location = self.location;
+    }
 
+    if (top.frames.length != 0) {
+        top.location = self.document.location;
+    }
+</script>
 
+<div id="secondary">
 
+    <div class="container-fluid">
+        <div class="breadcrumb">
 
-    <div id="secondary">
-        <div class="container-fluid">
-            <div class="breadcrumb">
+            <span> <a href="/public/index.cfm?u=ocs_app">Home</a> </span>
+            <span>&nbsp;/&nbsp;</span>
+            <span> <a href="https://unemployment.oregon.gov/">Unemployment</a> </span>
+            <span>&nbsp;/&nbsp;</span>
+            <span> Online Claims </span>
 
-                <span> <a href="/public/index.cfm?u=ocs_app">Home</a> </span>
-                <span>&nbsp;/&nbsp;</span>
-                <span> <a href="https://unemployment.oregon.gov/">Unemployment</a> </span>
-                <span>&nbsp;/&nbsp;</span>
-                <span> Online Claims </span>
-
-            </div>
         </div>
     </div>
+</div>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT }, 'google_translate_element');
-        }</script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT }, 'google_translate_element');
+    }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 
 
-    <div class="container">
-
+<div class="container">
 
         <style>
             .outageDivStyle {
@@ -248,17 +271,11 @@
             }
         </style>
 
-
-
-
-
-
     </div>
 
     <link rel="stylesheet" type="text/css" href="/ocs/estimator/estimator.css" />
     <br>
-
-
+    
 
     <style>
         .stripe1 {
@@ -310,25 +327,25 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <p style="margin-left:12px;margin-right:10px;">
+                    <p class="p-main">
                         This site allows you to estimate how much your Oregon Unemployment
                         Insurance Benefits will be before you file a new unemployment insurance
                         claim. If you are receiving, or have received benefits on an existing
                         claim, that claim must expire before a new claim can be filed.
                     </p>
 
-                    <p style="margin-left:12px;margin-right:10px;">
+                    <p class="p-main">
                         For a detailed description of how the weekly benefit amount is calculated,
                         please see the Unemployment Insurance Claimant Handbook available at:
                         <b><a href="https://unemployment.oregon.gov/file-a-claim#main" target="_uihb">How to Apply for Unemployment Insurance Benefits</a></b>.
                     </p>
-                    <p style="margin-left:12px;margin-right:10px;">
+                    <p class="p-main">
                         Please enter the gross wages (amounts earned before taxes were withheld)
                         paid to you in the quarters indicated below. If you were not paid wages
                         during a given quarter, enter zero for that quarter. When entering
                         your wages, do not enter dollar signs, decimal points, or cents.
                     </p>
-                    <p style="margin-left:12px;margin-right:10px;">
+                    <p class="p-main">
                         You may use pay stubs and/or W2 forms to determine your wages. If
                         you use the wage information on a W2 form, convert the yearly amount
                         reported into quarterly amounts. Include wages paid for work performed
@@ -349,7 +366,7 @@
 
                 <div class="row stripe1" style="margin-left:12px;">
                     <div class="form-group col-md-4 column1">
-                        <h2 style="font-size:20px;background-color:#50788B">
+                        <h2>
                             1st quarter: 2023/2<br />
                             04/01/2023 To 06/30/2023:
                         </h2>
@@ -370,7 +387,7 @@
 
                 <div class="row stripe2" style="margin-left:12px;">
                     <div class="form-group col-md-4 column1">
-                        <h2 style="font-size:20px;background-color:#50788B">
+                        <h2>
                             2nd quarter: 2023/3<br />
                             07/01/2023 To 09/30/2023:
                         </h2>
@@ -391,7 +408,7 @@
 
                 <div class="row stripe1" style="margin-left:12px;">
                     <div class="form-group col-md-4 column1">
-                        <h2 style="font-size:20px;background-color:#50788B">
+                        <h2>
                             3rd quarter: 2023/4<br />
                             10/01/2023 To 12/31/2023:
                         </h2>
@@ -412,7 +429,7 @@
 
                 <div class="row stripe2" style="margin-left:12px;">
                     <div class="form-group col-md-4 column1">
-                        <h2 style="font-size:20px;background-color:#50788B">
+                        <h2>
                             4th quarter: 2024/1<br />
                             01/01/2024 To 03/31/2024:
                         </h2>
@@ -433,7 +450,7 @@
 
                 <div class="row stripe1" style="margin-left:12px;">
                     <div class="form-group col-md-4 column1">
-                        <h2 style="font-size:20px;background-color:#50788B">
+                        <h2>
                             5th quarter: 2024/2<br />
                             04/01/2024 To 06/30/2024:
                         </h2>
@@ -453,11 +470,13 @@
                 </div>
 
 
-                <div class="row stripe2" style="margin-left: 12px;">
+                <div class="row bg-white" style="margin-left: 12px;">
                     <div class="form-group  text-center inputdiv" style="margin-top: .25em;">
-                        <input type="submit" name="Submit" value=" Click Here to Estimate Your Payments ">
+                        <!--<input type="submit" name="Submit" value=" Click Here to Estimate Your Payments ">-->
+                        <button type="submit" class="btn btn-outline-secondary" name="Submit">Click Here to Estimate Your Payments </button>
                         &nbsp;&nbsp;
-                        <input type="reset" name="Submit2" value=" Reset ">
+                        <!--<input type="reset" name="Submit2" value=" Reset ">-->
+                        <button type="reset" class="btn btn-outline-secondary" name="Submit2">Reset </button>
                     </div>
                 </div>
             </form>
@@ -476,20 +495,22 @@
     <script>
 
 
-        document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
+        /*
+         * Used for CSS debugging, for production pass false to toggle function or comment out.
+         */
+        document.addEventListener('keydown', function (event) {
 
-            document.addEventListener('keydown', function (event) {
-
-                if (event.key === '1' && event.altKey && event.ctrlKey) {
-                    // this is for development environment
-                    $debugHelper.toggle(true);
-                }
-
-            });
-
+            if (event.key === '1' && event.altKey && event.ctrlKey) {
+                // this is for development environment
+                $debugHelper.toggle(true);
+            }
 
         });
-    </script>
+
+
+    });
+</script>
 
 </body>
 </html>
