@@ -1,4 +1,4 @@
-﻿<!-- 
+﻿<!--
     Example: centering a form in a card
 -->
 <!DOCTYPE html>
@@ -9,15 +9,17 @@
     <title>Bootstrap features</title>
 
     <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="Lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link href="Lib/styles/headers.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
     <link href="Lib/styles/index.css" rel="stylesheet" />
+    <script src="Lib/scripts/from-now.js"></script>
+    <script src="Lib/jquery/dist/jquery.js"></script>
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
 
     <!-- styles are here temp and once okay move to a .css file(s) -->
     <style>
-
     </style>
 
 </head>
@@ -27,6 +29,13 @@
     </div>
 
     <main>
+
+        <form method="post" class="w-25" id="messageForm">
+            <input type="hidden" id="recipientName" />
+            <input type="hidden" id="subjectText" />
+            <input type="hidden" id="messageText" />
+            <input type="hidden" id="acceptedFlag" />
+        </form>
 
         <div class="container">
 
@@ -67,6 +76,13 @@
                                     <input id="Region" class="form-control" />
                                 </div>
                             </fieldset>
+
+                            <div class="row mt-2">
+                                <div class="col-auto">
+                                    <button class="btn btn-primary ms-1">Submit</button>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -75,22 +91,110 @@
 
     </main>
 
+    <!-------------------------------------------------------------
+    data-bs-backdrop="static" means can not click outside of dialog
+    If desired, modal can be loaded from a separate file
+    -------------------------------------------------------------->
+
+    <div class="modal fade"
+         id="mi-modal"
+         tabindex="-1"
+         data-bs-backdrop="static"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-body-secondary">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-4" id="exampleModalLabel">Help desk</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name" value="helpdesk@gmail.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="col-form-label">Subject:</label>
+                            <input type="text" class="form-control" id="subject" value="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text">Your message here...</textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="modal-btn-no">Close</button>
+                    <button type="button" class="btn btn-primary" id="modal-btn-yes">Send message</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer fixed-bottom border-top text-center pt-2 pb-2">
+        <button class="btn btn-primary  me-2"
+                type="submit"
+                id="btn-help"
+                aria-label="Help window">
+            Help
+        </button>
+
+        <span id="footerInner"></span>
+
+    </div>
+
     <script>
+
+
         document.addEventListener("DOMContentLoaded", () => {
 
-            /*
-             * Provides the ability to add outlines to every single element on a page
-             * Usage: Pass true to toggle for development environment, false for other environments
-             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
-            */
+            document.getElementById("footerInner")
+                .innerHTML = `Created ${fromNow(new Date('2024-10-09T02:30'))}`;
+
+
             document.addEventListener('keydown', function (event) {
 
                 if (event.key === '1' && event.altKey && event.ctrlKey) {
-                    // this is for development environment
                     $debugHelper.toggle(true);
                 }
 
             });
+
+        });
+
+        var modalConfirm = function (callback) {
+
+            $("#btn-help").on("click", function () {
+                $("#mi-modal").modal('show');
+            });
+
+            $("#modal-btn-yes").on("click", function () {
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+
+            $("#modal-btn-no").on("click", function () {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function (confirm) {
+            if (confirm) {
+                document.getElementById("recipientName").value = document.getElementById("recipient-name").value;
+                document.getElementById("messageText").value = document.getElementById("message-text").value;
+                document.getElementById("subjectText").value = document.getElementById("subject").value;
+                document.getElementById("acceptedFlag").value = true;
+            } else {
+                document.getElementById("acceptedFlag").value = false;
+            }
+
+            //document.getElementById("messageForm").submit();
 
         });
 
