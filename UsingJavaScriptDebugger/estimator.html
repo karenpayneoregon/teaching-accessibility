@@ -53,13 +53,7 @@ In summary, the following changes were made:
             margin-bottom: 2px;
         }
 
-        .container-fluid {
-            width: 100%;
-            padding-right: 0;
-            padding-left: 0;
-            margin-right: auto;
-            margin-left: auto;
-        }
+
 
         .table_ocs_extra {
             width: 100%;
@@ -181,53 +175,6 @@ In summary, the following changes were made:
         }
     </style>
 
-    <!-- Google Analytics skipped in server mode: 'DEV' -->
-    <!-- would have used url: 'page_path': '/ocs/estimator/index.cfm/lang/E'  application: 'OCS Estimator'   google_id: 'UA-123755448-2'  group: 'OCS-2'  -->
-</head>
-
-<body>
-
-    <div class="container-fluid shadow-sm mb-5">
-
-        <!--<table id="Oregon.gov_Header" cellpadding="0" border="0" cellspacing="0" width="100%" Summary="Agency Banner Formatting">
-
-            <tr class="or-gov-head" bgcolor="0f506f">
-                <td>
-                    <div class="or-gov-head">
-                        <font style="vertical-align: inherit;">
-                            <a href="https://www.emp.state.or.us/">
-                                <img src="https://www11.emp.state.or.us/graphics/jpg/header_logo_ogov_2019.jpg"
-                                     alt="Oregon Dot Gov Logo - Link to Employment Home Page" />Employment Department
-                            </a>
-                        </font>
-                    </div>
-                </td>
-                <td nowrap="true">
-                    <div class="float-end">
-                        <div id="google_translate_element"></div>
-                    </div>
-                </td>
-                <td nowrap="true">&nbsp;&nbsp;&nbsp;</td>
-            </tr>
-        </table>-->
-
-        <div class="container-fluid bg-primary text-white or-gov-head">
-            <div class="row">
-                <div class="col-auto">
-                    <a href="https://www.emp.state.or.us/" class="d-flex align-items-center">
-                        <img src="https://www11.emp.state.or.us/graphics/jpg/header_logo_ogov_2019.jpg" alt="Oregon Dot Gov Logo - Link to Employment Home Page" class="img-fluid me-2" />
-                        Employment Department
-                    </a>
-                </div>
-                <div class="col d-flex mt-2 me-1 justify-content-end">
-                    <div id="google_translate_element"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
     <style id="antiClickjack">
         body {
             display: none !important;
@@ -247,20 +194,40 @@ In summary, the following changes were made:
             top.location = self.document.location;
         }
     </script>
+</head>
+
+<body>
+
+    <div class="or-gov-head mb-5" style="background-color: #0f506f;">
+        <div class="float-start">
+            <a href="https://www.emp.state.or.us/"><img src="https://www11.emp.state.or.us/graphics/jpg/header_logo_ogov_2019.jpg" alt="Oregon Employment Department">Employment Department</a>
+        </div>
+        <div class="float-end pt-2 pe-2">
+            <div id="google_translate_element"></div>
+        </div>
+
+    </div>
 
     <div id="secondary">
 
         <div class="container-fluid">
-            <div class="breadcrumb">
 
-                <span> <a href="/public/index.cfm?u=ocs_app">Home</a> </span>
-                <span>&nbsp;/&nbsp;</span>
-                <span> <a href="https://unemployment.oregon.gov/">Unemployment</a> </span>
-                <span>&nbsp;/&nbsp;</span>
-                <span> Online Claims </span>
+            <div class="row">
+
+                <div class="breadcrumb">
+
+                    <span> <a href="/public/index.cfm?u=ocs_app">Home</a> </span>
+                    <span>&nbsp;/&nbsp;</span>
+                    <span> <a href="https://unemployment.oregon.gov/">Unemployment</a> </span>
+                    <span>&nbsp;/&nbsp;</span>
+                    <span> Online Claims </span>
+
+                </div>
 
             </div>
+
         </div>
+
     </div>
 
     <script type="text/javascript">
@@ -348,7 +315,7 @@ In summary, the following changes were made:
     <div class="container">
         <main>
             <div class="row">
-                <div style="text-align:center;">
+                <div style="text-align: center;">
 
                     <h1 style="font-size: 22px; margin-left: 12px; margin-right: 12px;">
                         Unemployment Insurance Estimator
@@ -423,7 +390,7 @@ In summary, the following changes were made:
                     <div class="row stripe2 border border-dark border-bottom-0 border-top-0">
                         <div class="col-md-4 column1">
                             <h2>
-                                2nd quarter: 2023/3<br/>
+                                2nd quarter: 2023/3<br />
                                 07/01/2023 To 09/30/2023:
                             </h2>
                         </div>
@@ -444,7 +411,7 @@ In summary, the following changes were made:
                     <div class="row stripe1 border border-dark border-bottom-0 border-top-0">
                         <div class="col-md-4 column1">
                             <h2>
-                                3rd quarter: 2023/4<br/>
+                                3rd quarter: 2023/4<br />
                                 10/01/2023 To 12/31/2023:
                             </h2>
                         </div>
@@ -465,7 +432,7 @@ In summary, the following changes were made:
                     <div class="row stripe2 border border-dark border-bottom-0 border-top-0">
                         <div class="col-md-4 column1">
                             <h2>
-                                4th quarter: 2024/1<br/>
+                                4th quarter: 2024/1<br />
                                 01/01/2024 To 03/31/2024:
                             </h2>
                         </div>
@@ -486,7 +453,7 @@ In summary, the following changes were made:
                     <div class="row stripe1 border border-dark border-top-0">
                         <div class="col-md-4 column1">
                             <h2>
-                                5th quarter: 2024/2<br/>
+                                5th quarter: 2024/2<br />
                                 04/01/2024 To 06/30/2024:
                             </h2>
                         </div>
@@ -532,21 +499,32 @@ In summary, the following changes were made:
     <script>
 
 
-        document.addEventListener("DOMContentLoaded", () => {
-            /*
-             * Used for CSS debugging, for production pass false to toggle function or comment out.
-             */
-            document.addEventListener('keydown', function (event) {
+        document.addEventListener("DOMContentLoaded",
+            () => {
+                /*
+                 * Used for CSS debugging, for production pass false to toggle function or comment out.
+                 */
+                document.addEventListener('keydown',
+                    function (event) {
 
-                if (event.key === '1' && event.altKey && event.ctrlKey) {
-                    // this is for development environment
-                    $debugHelper.toggle(true);
-                }
+                        if (event.key === '1' && event.altKey && event.ctrlKey) {
+                            // this is for development environment
+                            $debugHelper.toggle(true);
+                        }
+
+                    });
+
 
             });
-
-
-        });
+        function googleTranslateElementInit() {
+            // ReSharper disable once ConstructorCallNotUsed
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi',
+                    layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
+                }, 'google_translate_element');
+        }
     </script>
 
 </body>
