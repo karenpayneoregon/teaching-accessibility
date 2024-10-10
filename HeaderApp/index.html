@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <style>
+        .breadcrumb {
+            padding: 2px 15px;
+            font-size: 15px;
+            background-color: inherit;
+            margin-top: -45px;
+            margin-bottom: 2px;
+        }
+
+        .navbar {
+            position: relative;
+            min-height: 0px !important;
+            padding: 0px !important;
+        }
+
+        .or-gov-head {
+            background-color: #0F506F !important;
+            text-decoration: none !important;
+            color: #FFFFFF !important;
+            font-size: 14px;
+            height: 42px;
+        }
+
+            .or-gov-head a {
+                color: white;
+                font-size: 14px;
+                text-decoration: none !important;
+                color: #FFFFFF !important;
+            }
+
+                .or-gov-head a:visited {
+                    color: white;
+                    font-size: 14px;
+                    text-decoration: none !important;
+                    color: #FFFFFF !important;
+                }
+
+        .goog-te-gadget-simple .goog-te-menu-value {
+            color: #000000 !important;
+        }
+
+        .clear {
+            clear: both;
+            height: 60px;
+        }
+
+        .footer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            background-color: #0F506F;
+            color: #FFFFFF !important;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .footer a:visited {
+            color: #FFFFFF !important;
+            text-decoration: none !important;
+            font-weight: bold;
+        }
+
+        .footer a {
+            text-decoration: none !important;
+            color: #FFFFFF !important;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="or-gov-head mb-5" style="background-color: #0f506f;">
+        <div class="float-start ms-2">
+            <a href="https://www.emp.state.or.us/"><img src="https://www11.emp.state.or.us/graphics/jpg/header_logo_ogov_2019.jpg" alt="Oregon Employment Department">Employment Department</a>
+        </div>
+        <div class="float-end pt-2 pe-2">
+            <div id="google_translate_element"></div>
+        </div>
+
+    </div>
+    <div id="secondary">
+
+        <div class="container-fluid">
+
+            <div class="breadcrumb">
+
+                <span> <a href="/public/index.cfm?u=ocs_app">Home</a> </span>
+                <span>&nbsp;/&nbsp;</span>
+                <span> <a href="https://unemployment.oregon.gov/">Unemployment</a> </span>
+                <span>&nbsp;/&nbsp;</span>
+                <span> Online Claims </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="w-50 mx-auto">
+                <h1 class="mt-5 text-center">Working with tables</h1>
+                <table class="table table-sm  table-bordered caption-top mb-3 shadow">
+                    <thead class="table-primary">
+                    <th scope="col">First name</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    </thead>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>M</td>
+                    </tr>
+                    <tr>
+                        <td>Jane</td>
+                        <td>Doe</td>
+                        <td>F</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <!--<div class="clear"></div>-->
+
+
+    <div id="indexFooter" class="footer">
+        <a href="/public/index.cfm?u=from_estimator">
+            Return to Employment Department Home
+        </a>
+    </div>
+
+    <script type="text/javascript">
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi',
+                    layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
+                },
+                'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
