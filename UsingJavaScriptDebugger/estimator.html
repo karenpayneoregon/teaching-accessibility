@@ -212,8 +212,6 @@ In summary, the following changes were made:
 
         <div class="container-fluid">
 
-            <div class="row">
-
                 <div class="breadcrumb">
 
                     <span> <a href="/public/index.cfm?u=ocs_app">Home</a> </span>
@@ -224,8 +222,6 @@ In summary, the following changes were made:
 
                 </div>
 
-            </div>
-
         </div>
 
     </div>
@@ -233,7 +229,13 @@ In summary, the following changes were made:
     <script type="text/javascript">
 
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT }, 'google_translate_element');
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi',
+                    layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
+                },
+                'google_translate_element');
         }
     </script>
 
