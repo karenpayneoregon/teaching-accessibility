@@ -1,23 +1,68 @@
-fieldset {
-    padding: 5px;
+.breadcrumb {
+    padding: 2px 15px;
+    font-size: 15px;
+    background-color: inherit;
+    margin-top: -45px;
+    margin-bottom: 2px;
 }
 
-.fieldset-auto-width {
-    display: inline-block;
+.navbar {
+    position: relative;
+    min-height: 0px !important;
+    padding: 0px !important;
 }
 
-legend {
-    background: blue;
+.or-gov-head {
+    background-color: #0F506F !important;
+    text-decoration: none !important;
+    color: #FFFFFF !important;
+    font-size: 14px;
+    height: 42px;
+}
+
+.or-gov-head a {
     color: white;
-    border: solid 1px black;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    font-size: 14px;
+    text-decoration: none !important;
+    color: #FFFFFF !important;
 }
 
-.ledgendSpan {
-    padding-left: 10px;
-    padding-right: 10px;
+.or-gov-head a:visited {
+    color: white;
+    font-size: 14px;
+    text-decoration: none !important;
+    color: #FFFFFF !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value {
+    color: #000000 !important;
+}
+
+.clear {
+    clear: both;
+    height: 60px;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #0F506F;
+    color: #FFFFFF !important;
+    text-align: center;
+    font-weight: bold;
+}
+
+.footer a:visited {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+.footer a {
+    text-decoration: none !important;
+    color: #FFFFFF !important;
+    font-weight: bold;
 }
