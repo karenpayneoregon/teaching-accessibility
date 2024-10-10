@@ -136,7 +136,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UsingTables", "UsingTables\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{BD7C4794-124F-44BA-992D-F5F86FCDFC9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkering", "Tinkering\Tinkering.csproj", "{4258726A-647E-4649-B4CF-DFAFC143F271}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tinkering", "Tinkering\Tinkering.csproj", "{4258726A-647E-4649-B4CF-DFAFC143F271}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UsingJavaScriptDebugger", "UsingJavaScriptDebugger\", "{B48E04B1-AAD7-461F-B0B4-340BCFFD14F1}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -185,6 +185,52 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BorderAnimation", "BorderAn
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootstrapFeatures", "BootstrapFeatures\", "{3E288E50-08FF-4DA2-BF83-1AA0130ADFDC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64643"
+		Debug.AspNetCompiler.PhysicalPath = "BootstrapFeatures\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64643\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64643"
+		Release.AspNetCompiler.PhysicalPath = "BootstrapFeatures\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64643\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64643"
+		SlnRelativePath = "BootstrapFeatures\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{E500CA26-F6E5-4B40-ACB7-00D0B6106A26}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BasicEmptyWebProject", "BasicEmptyWebProject\", "{1D113B1D-FAEA-467A-8FCC-9A87D445589F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53550"
+		Debug.AspNetCompiler.PhysicalPath = "BasicEmptyWebProject\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53550\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53550"
+		Release.AspNetCompiler.PhysicalPath = "BasicEmptyWebProject\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53550\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53550"
+		SlnRelativePath = "BasicEmptyWebProject\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,6 +269,14 @@ Global
 		{5E40F45E-4963-4F75-8DDC-6C9FE47AC668}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E40F45E-4963-4F75-8DDC-6C9FE47AC668}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E40F45E-4963-4F75-8DDC-6C9FE47AC668}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3E288E50-08FF-4DA2-BF83-1AA0130ADFDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E288E50-08FF-4DA2-BF83-1AA0130ADFDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E288E50-08FF-4DA2-BF83-1AA0130ADFDC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E288E50-08FF-4DA2-BF83-1AA0130ADFDC}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{1D113B1D-FAEA-467A-8FCC-9A87D445589F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D113B1D-FAEA-467A-8FCC-9A87D445589F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D113B1D-FAEA-467A-8FCC-9A87D445589F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D113B1D-FAEA-467A-8FCC-9A87D445589F}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -237,6 +291,8 @@ Global
 		{4258726A-647E-4649-B4CF-DFAFC143F271} = {BD7C4794-124F-44BA-992D-F5F86FCDFC9C}
 		{B48E04B1-AAD7-461F-B0B4-340BCFFD14F1} = {25F151FC-A8F2-4BFF-8FF9-C09ACB91ED32}
 		{5E40F45E-4963-4F75-8DDC-6C9FE47AC668} = {A685898A-BB37-4E5A-8486-2D67A0441FCC}
+		{3E288E50-08FF-4DA2-BF83-1AA0130ADFDC} = {A685898A-BB37-4E5A-8486-2D67A0441FCC}
+		{1D113B1D-FAEA-467A-8FCC-9A87D445589F} = {E500CA26-F6E5-4B40-ACB7-00D0B6106A26}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22F7B927-71C5-47DC-AC95-9D7B7AC43F1F}

@@ -8,6 +8,27 @@ document.documentElement.setAttribute('lang', 'es');
 $x('//a')
 
 ```
+
+## Disable all links on a page
+
+This can be helpful for demonstration purposes.
+
+```javascript
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        disableLinks();
+    });
+    function disableLinks () {
+        const links = document.querySelectorAll('a');
+
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+            });
+        });
+    }
+</script>
+```
 ---
 > [!TIP]
 > Helpful advice for doing things better or more easily.

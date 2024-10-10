@@ -1,0 +1,100 @@
+﻿<!-- 
+    Example: centering a form in a card
+-->
+<!DOCTYPE html>
+<!-- Note lang -->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Bootstrap features</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>bootstrap <span> v5.3.3</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+
+            <div class="row d-flex justify-content-center align-items-center m-0" style="height: 75vh;">
+                <div class="card border-0" style="width: 18rem;">
+
+                    <div class="card-body">
+                        <form class="border p-3 shadow">
+                            <fieldset>
+                                <legend class="float-none w-auto fs-6 px-1" id="description1">
+                                    <span class="fw-bold ledgendSpan">Login</span>
+                                </legend>
+                                <div class="col-12">
+                                    <label for="FirstName">First name</label>
+                                </div>
+                                <div class="col-12">
+                                    <input id="FirstName" class="form-control" />
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="LastName">Last name</label>
+                                </div>
+                                <div class="col-12">
+                                    <input id="LastName" class="form-control" />
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="EmailAddress">Email address</label>
+                                </div>
+                                <div class="col-12">
+                                    <input id="EmailAddress" class="form-control" />
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="Region">Region</label>
+                                </div>
+                                <div class="col-12">
+                                    <input id="Region" class="form-control" />
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
