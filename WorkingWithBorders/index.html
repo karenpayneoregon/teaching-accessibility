@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Working with borders</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+        .top {
+            border-top: 2px solid black;
+        }
+
+        .bottom {
+            border-bottom: 2px solid black;
+        }
+
+        .left-bottom-right {
+            border-bottom: 2px solid black;
+            border-right:  2px solid black;
+            border-left:   2px solid black;
+        }
+
+        .left-right {
+            border-right: 2px solid darkorange;
+            border-left: 2px solid darkorange;
+        }
+
+        .left {
+            border-left: 2px solid black;
+        }
+         
+        .right {
+            border-right: 2px solid black;
+        }
+
+        hr {
+            border-width: 2px 0 2px 0;
+            height: 4px;
+            border-style: solid;
+            border-color:  #07234f;
+            width: 300px;
+            margin: 16px auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Working <span> with borders</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-auto p-0 mb-2 fw-bold">
+                    Conventional CSS
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-3 text-bg-light" style="border: 1px solid red; border-width: 2px 0 0 2px;">Left/Top</div>
+
+                <div class="col-3 left-bottom-right text-bg-info">Left/Bottom/Right</div>
+
+                <div class="col-3 left-right text-bg-light">Left/Right</div>
+
+                <div class="col-3 left text-bg-info">Left</div>
+            </div>
+
+            <div class="row">
+                <div class="col-3 top text-bg-info">Top</div>
+
+                <div class="col-3 bottom text-bg-light">Bottom</div>
+
+                <div class="col-3 right text-bg-info">Right</div>
+
+                <div class="col-3 left text-bg-light">Left</div>
+            </div>
+            
+            <hr/>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
