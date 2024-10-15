@@ -1,6 +1,6 @@
 function states () {
     return [
-        { "name": "", "code": "" },
+        { "name": "CH", "code": "Choice" },
         { "name": "AL", "code": "AL" },
         { "name": "AK", "code": "AK" },
         { "name": "Arizona", "code": "AZ" },

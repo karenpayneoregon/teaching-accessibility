@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Sweet dialogs</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+
+    <script src="Lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="Lib/limonte-sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <script src="Lib/limonte-sweetalert2/sweetalert2.all.js"></script>
+    <script src="Lib/SweetDialogs.js"></script>
+    
+
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+        .swal-button {
+            padding: 7px 19px;
+            border-radius: 2px;
+            background-color: #4962B3;
+            font-size: 12px;
+            border: 1px solid #3e549a;
+            text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+        }
+         
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Sweet dialogs <span> Examples</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-auto">
+                    <button id="messageBoxButton" class="btn btn-outline-dark">Message box</button>
+                </div>
+                <div class="col pt-2">This is a message box with a few options along with formatting.</div>
+            </div>
+
+            <div class="row divider">
+                <div class="col-auto">
+                    <button id="confirmationButton1" class="btn btn-outline-dark">Confirm</button>
+                </div>
+                <div class="col pt-2">Confirmation replacement with params</div>
+            </div>
+
+            <div class="row divider">
+                <div class="col-auto">
+                    <button id="confirmationButton2" class="btn btn-outline-dark">Confirm</button>
+                </div>
+                <div class="col pt-2">Confirmation replacement</div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="d-flex justify-content-between">
+                    <label for="_resultItem">Confirmation result</label>
+                </div>
+                <div class="col-2">
+                    <input id="_resultItem" class="form-control mb-2" required />
+                </div>
+            </div>
+
+
+            <fieldset id="mainFieldset3" class="border border-dark rounded-4 p-3 mt-3 mb-3">
+                <legend class="float-none w-auto fs-6 px-1" id="description3">
+                    <span class="fw-bold ledgendSpan">Browser defaults</span>
+                </legend>
+
+                <div class="row">
+                    <div class="col">
+                        <button id="browserAlert" class="btn btn-outline-dark w-100">Alert</button>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <button id="browserConfirm" class="btn btn-outline-dark w-100">Confirm</button>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset id="mainFieldset4" class="border border-dark rounded-4 p-3 mt-3 mb-3">
+                <legend class="float-none w-auto fs-6 px-1" id="description4">
+                    <span class="fw-bold ledgendSpan">Toast</span>
+                </legend>
+
+                <div class="row">
+                    <div class="col">
+                        <button id="toastButton" class="btn btn-outline-dark w-100">Toaster</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+        // Trigger for message box
+        document.getElementById('messageBoxButton').addEventListener("click", function () {
+            const title = '<span style="color: royalblue; font-weight: 700;text-shadow: 2px 4px 4px rgba(46,91,173,0.6);">Alert</span>';
+            //const title = 'Alert';
+
+            $SweetDialogs.messageBox(title, 'This is an <strong>message</strong> to read');
+        });
+
+        // Trigger for confirmation dialog
+        document.getElementById('confirmationButton1').addEventListener("click", function () {
+            $SweetDialogs.Confirmation('My title', 'My message', 'Yes', 'No');
+        });
+
+        // Trigger for confirmation dialog
+        document.getElementById('confirmationButton2').addEventListener("click", function () {
+            $SweetDialogs.TwoButtonQuestion();
+        });
+
+        // next two are browser defaults
+
+        document.getElementById('browserAlert').addEventListener("click", function () {
+            alert('This is a browser alert');
+        });
+
+        document.getElementById('browserConfirm').addEventListener("click", function () {
+            if (confirm('Press a button!\nEither OK or Cancel.') === true) {
+                document.getElementById("_resultItem").value = 'Okay';
+            } else {
+                document.getElementById("_resultItem").value = 'Cancelled';
+            }
+        });
+
+        document.getElementById("toastButton").addEventListener("click", function () {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "center-start",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: "Initial Claim created"
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>

@@ -23,6 +23,9 @@
 </head>
 <body>
 
+    <!--
+    Crappy form validation, see FormValidation/index.html for better validation
+    -->
 
     <div class="nine mt-3">
         <h1>Working with<span> label associated with inputs</span></h1>
@@ -33,7 +36,7 @@
         <div class="container">
 
             <div class="alert  lighten-60" role="alert">
-                <h1 class="fs-4">Order forms (Using custom colors)</h1>
+                <h1 class="fs-4">Order forms (Using custom colors and default validation)</h1>
             </div>
 
 
@@ -126,6 +129,12 @@
 
     <!-- this code could move to a .js file but not for a real application that needs document ready -->
     <script>
+        var form = document.querySelector('form');
+        form.addEventListener('submit',
+            function (event) {
+                event.preventDefault();
+            });
+
         document.addEventListener("DOMContentLoaded", () => {
             /* globally setup required text */
             var requiredElements = document.getElementsByClassName('oed-required');
@@ -145,6 +154,9 @@
                 optionElement.textContent = option.code;
                 current_state.appendChild(optionElement);
             });
+
+            var x = document.getElementById("StateId").options[0].disabled = true;
+            document.getElementById("StateId").selectedIndex = -1;
 
             /*
              * Provides the ability to add outlines to every single element on a page
