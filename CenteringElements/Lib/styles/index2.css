@@ -1,0 +1,39 @@
+/*div {
+    font-size: min(3vw, 16px);
+}*/
+.main-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: min(3vw, 16px);
+    /*font-size: clamp(12px, 12px, 16px);*/
+}
+
+legend {
+    background: #FFFACD;
+    border: solid 1px blue;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.ledgendSpan {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.nine h1 {
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #222;
+    letter-spacing: 1px;
+    font-family: "Playfair Display", serif;
+    font-weight: 200;
+}
+
