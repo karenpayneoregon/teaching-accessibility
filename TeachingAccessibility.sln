@@ -395,6 +395,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DialogsExamples", "DialogsE
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CenteringElements", "CenteringElements\", "{B9EE9295-3E47-4353-91CB-F2736FB3517C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59456"
+		Debug.AspNetCompiler.PhysicalPath = "CenteringElements\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59456\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59456"
+		Release.AspNetCompiler.PhysicalPath = "CenteringElements\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59456\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59456"
+		SlnRelativePath = "CenteringElements\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -469,6 +491,10 @@ Global
 		{F9E3CC61-4379-4688-8DEF-26FCA6943851}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9E3CC61-4379-4688-8DEF-26FCA6943851}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9E3CC61-4379-4688-8DEF-26FCA6943851}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B9EE9295-3E47-4353-91CB-F2736FB3517C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EE9295-3E47-4353-91CB-F2736FB3517C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EE9295-3E47-4353-91CB-F2736FB3517C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EE9295-3E47-4353-91CB-F2736FB3517C}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -492,6 +518,7 @@ Global
 		{5BE955F7-FF32-41AA-86BC-6E0344ECCBC4} = {7E210A52-4C8F-440F-9175-D5BDC1B088CA}
 		{4B168D9C-1949-491D-9ACC-85DD3B42E9DE} = {6C1A172B-EB21-464F-9D6E-E0D9C7DC4EDF}
 		{F9E3CC61-4379-4688-8DEF-26FCA6943851} = {4E2AB14C-2C2C-40DB-A664-C947AE4ECC63}
+		{B9EE9295-3E47-4353-91CB-F2736FB3517C} = {C660171D-B83C-425C-8A18-47902AA092B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22F7B927-71C5-47DC-AC95-9D7B7AC43F1F}

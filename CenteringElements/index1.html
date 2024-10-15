@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TODO</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+
+    <script src="lib/debugHelper.js"></script>
+    
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+
+         
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Main <span> vertical/horizonally inline</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+            <div style='display:flex; position:absolute; top:0; bottom:0; right:0; left:0; '>
+                <div id='div_you_want_centered' style='margin:auto;'>
+                    <div class="card border border-primary shadow" style="width: 18rem;">
+                        <img src="Lib/images/DeleteCode.png" class="card-img-top" alt="Ooops"/>
+                        <div class="card-body">
+                            <h2 class="card-title fs-4">Developer meme</h2>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="clear"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+
+            });
+
+ 
+
+        });
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Centering 1</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+
+    <script src="lib/debugHelper.js"></script>
+
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <!-- Create footer -->
+    <script src="lib/footerHelper.js"></script>
+
+    <script src="Lib/createTable.js"></script>
+
+
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Centering <span> vertical/horizonally</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+            <div class="main-center p-2">
+                <div class="row">
+
+                    <div class="col text-center fw-bold">
+                        Centered
+                    </div>
+                    <div id="TheTable"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="clear"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            $tableGenerator.mainTable(document);
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+                
+            });
+
+            /* add sticky footer */
+            document.body.append(
+                $footerHelper.create(
+                    'https://devweb07.emp.state.or.us/public/index.cfm?',
+                    'u=from_uic_lookup', 'e'));
+
+        });
+
+    </script>
+    <!-- must be here to run after document is loaded -->
+    
+</body>
+</html>
