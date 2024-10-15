@@ -90,17 +90,17 @@
             document.body.append(
                 $footerHelper.create(
                     'https://devweb07.emp.state.or.us/public/index.cfm?',
-                    'u=from_uic_lookup', 'e'));
+                    'u=from_uic_lookup', 'E'));
 
 
-            // https://medialize.github.io/URI.js/
-            var uri = new URI("https://devweb07.emp.state.or.us/public/index.cfm")
-                .addSearch({ u: ["from_uic_lookup"] });
-            console.log(uri.href());
-            console.log(URI(uri).equals('https://devweb07.emp.state.or.us/public/index.cfm?u=from_uic_lookup') === true);
+            //// https://medialize.github.io/URI.js/
+            //var uri = new URI("https://devweb07.emp.state.or.us/public/index.cfm")
+            //    .addSearch({ u: ["from_uic_lookup"] });
+            //console.log(uri.href());
+            //console.log(URI(uri).equals('https://devweb07.emp.state.or.us/public/index.cfm?u=from_uic_lookup') === true);
 
-            console.log($urlHelpers.joinURL('https://devweb07.emp.state.or.us/public/index.cfm',
-                '?u=from_uic_lookup'));
+            //console.log($urlHelpers.joinURL('https://devweb07.emp.state.or.us/public/index.cfm',
+            //    '?u=from_uic_lookup'));
 
 
 

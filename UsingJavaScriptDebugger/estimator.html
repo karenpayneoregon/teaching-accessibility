@@ -53,8 +53,6 @@ In summary, the following changes were made:
             margin-bottom: 2px;
         }
 
-
-
         .table_ocs_extra {
             width: 100%;
         }
@@ -272,7 +270,7 @@ In summary, the following changes were made:
 
     </div>
 
-    <link rel="stylesheet" type="text/css" href="/ocs/estimator/estimator.css" />
+    <!--<link rel="stylesheet" type="text/css" href="/ocs/estimator/estimator.css" />-->
     <br>
 
 
@@ -314,7 +312,7 @@ In summary, the following changes were made:
         }
     </style>
 
-    <div class="container">
+    <div class="container  shadow border border-black">
         <main>
             <div class="row">
                 <div style="text-align: center;">
@@ -491,11 +489,11 @@ In summary, the following changes were made:
 
     <div class="clear"></div>
 
-    <div id="indexFooter" class="footer">
+    <!--<div id="indexFooter" class="footer">
         <a href="/public/index.cfm?u=from_estimator">
             Return to Employment Department Home
         </a>
-    </div>
+    </div>-->
 
 
     <script>
@@ -516,6 +514,10 @@ In summary, the following changes were made:
 
                     });
 
+                document.body.append(
+                    $footerHelper.create(
+                        'https://devweb07.emp.state.or.us/public/index.cfm?',
+                        'u=from_uic_lookup', 'e'));
 
             });
         function googleTranslateElementInit() {

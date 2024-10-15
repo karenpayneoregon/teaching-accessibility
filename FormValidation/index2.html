@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="Lib/unitedStates.js"></script>
+    <script src="Lib/bootstrap/js/dist/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .kp-top-class {
+            top: 0;
+            margin-right: 10px !important;
+        }
+
+        .invalid-tooltip {
+            padding-bottom: .2em;
+        }
+
+        .invalid-tooltip {
+            color: #fff;
+            background-color: #B22222;
+        }
+
+
+        legend {
+            background: rgba(11, 8, 8, 0.55);
+            color: white;
+            font-weight: 900;
+            border: solid 1px black;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <div class="nine mt-3">
+        <h1>bootstrap 5 <span> Custom validation tool tips position experiments</span></h1>
+    </div>
+
+    <main>
+        <fieldset class="border border-success-subtle rounded-3 w-75 ms-3 p-3 mt-3 mb-3">
+
+            <legend class="float-none w-auto fs-6 px-1">
+                <span class="fw-bold">&nbsp;&nbsp;Invalid validation position&nbsp;&nbsp;</span>
+            </legend>
+
+            <form class="row g-3 needs-validation m-2 pb-3 ps-1" novalidate>
+
+                <div class="col-md-4 position-relative">
+                    <label for="firstNameValidation" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="firstNameValidation" required>
+                    <div class="invalid-tooltip kp-top-class">
+                        Please choose your first name.
+                    </div>
+                    <div class="valid-tooltip kp-top-class">
+                        Looks good! (Default)
+                    </div>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip02" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="validationTooltip02" required>
+                    <div class="invalid-tooltip kp-top-class">
+                        Please choose your last name.
+                    </div>
+                </div>
+
+                <div class="col-md-6 position-relative">
+                    <label for="validationTooltip03" class="form-label">City</label>
+                    <input type="text" class="form-control" id="validationTooltip03" required>
+                    <div class="invalid-tooltip">
+                        Please provide a valid city.
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <label for="validationTooltip04" class="form-label">State</label>
+                    <select class="form-select" id="validationTooltip04" required>
+                    </select>
+                    <div class="invalid-tooltip">
+                        Please select a valid state.
+                    </div>
+                </div>
+                <div class="col-md-3 position-relative">
+                    <label for="zip" class="form-label">Zip</label>
+                    <input type="text" class="form-control" id="zip" required>
+                    <div class="invalid-tooltip" style="top: 0; right: 0">
+                        Please provide a valid zip.
+                    </div>
+                </div>
+                <div class="col-12 mb-5">
+
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <button class="btn btn-dark" type="submit">Submit form</button>
+                    </div>
+
+                </div>
+            </form>
+        </fieldset>
+    </main>
+
+
+    <script>
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* populate state select */
+            const current_state = document.getElementById('validationTooltip04');
+
+            states().forEach((option) => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option.code;
+                optionElement.textContent = option.code;
+                current_state.appendChild(optionElement);
+            });
+
+            document.getElementById("validationTooltip04").options[0].disabled = true;
+            document.getElementById("validationTooltip04").selectedIndex = -1; 
+        });
+
+
+        validateInputs(document.querySelectorAll('.needs-validation'));
+        function validateInputs(forms) {
+
+            Array.from(forms).forEach(form => {
+
+                form.addEventListener('submit',
+                    event => {
+
+                        if (!form.checkValidity()) {
+                            if (document.getElementById('accounce_issues')) {
+                                document.getElementById('accounce_issues').style.display = "block";
+                                document.getElementById("accounce_issues").scrollIntoView();
+                            }
+
+                            event.preventDefault();
+                            event.stopPropagation();
+                            // we stopped for validation issues
+                        } else {
+                            // form valid, we can continue
+                            event.preventDefault();
+                            event.stopPropagation();
+                            window.location.href = "confirmation.html";
+                        }
+
+                        form.classList.add('was-validated');
+
+
+                    },
+                    false);
+            });
+
+
+
+        }
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+    </script>
+</body>
+
+</html>

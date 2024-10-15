@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Using svg files</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+    <script src="Lib/cssDebug.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Using SVG <span> examples</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+            <div class="main-center p-2">
+
+                <form id="loginForm" class="shadow">
+
+                    <fieldset class="border border-dark p-3 shadow">
+                        <legend class="float-none w-auto px-1" id="description">
+                            <span class="fw-bold ps-1 pe-1">Login</span>
+                        </legend>
+
+                        <div class="mb-3">
+
+                            <label for="usersEmail" class="form-label" style="color: #af190d !important;">
+                                <img src="Lib/images/redAsterisk.svg" alt="required" />Email address
+                            </label>
+
+                            <input type="email"
+                                   class="form-control"
+                                   id="usersEmail"
+                                   aria-describedby="emailHelp">
+
+                            <div id="emailHelp" class="form-text">
+                                We'll never share your email with anyone else.
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label for="usersPassword" 
+                                   class="form-label" style="color: #af190d !important;">
+                                <img src="Lib/images/greenAsterisk.svg" alt="password required" />Password
+                            </label>
+
+                            <input type="password" class="form-control" id="usersPassword">
+                        </div>
+
+                        <div class="mb-3 form-check">
+
+                            <input type="checkbox" class="form-check-input" id="requiredCheckMark">
+
+                            <label class="form-check-label"
+                                   style="color: #af190d !important;"
+                                   for="requiredCheckMark">
+                                Check me out
+                            </label>
+
+                        </div>
+
+                        <button id="post_form" type="submit" class="btn btn-primary">Submit</button>
+
+                    </fieldset>
+
+
+                </form>
+
+                <div class="row mt-3 text-center">
+                    <div class="col">
+                        Find us on <img src="Lib/images/X.svg" alt="Twitter" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

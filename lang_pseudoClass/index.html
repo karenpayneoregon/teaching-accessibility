@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>The :lang() CSS pseudo-class</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+ 
+        :lang(en-US) {
+            outline: 2px solid deeppink;
+        }
+
+        :lang(en) {
+            color: black;
+        }
+
+        p:lang(fr) {
+            color: yellow;
+            background-color: blue;
+            font-weight: bold;
+        }
+
+        div:lang(fr) {
+            color: white;
+            background-color: blue;
+        }
+
+        p:lang(sp) {
+            color: white;
+            background-color: red;
+        }
+
+        div:lang(sp) {
+            color: white;
+            background-color: red;
+        }
+
+        p:lang(en-CA) {
+            color: #d80621;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>:lang() <span> CSS pseudo-class</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+            <p lang="en-US">
+                Music during road trips and long commutes aren’t a problem, but
+                using headphones isn’t the best thing to do while
+                driving in your car.
+            </p>
+
+            <p lang="pl-PL">
+                Gdy widzimy znak z narysowaną czaszką i napisem 
+                <strong lang="en-US">DANGER</strong> to lepiej nie wchodzić do środka.
+            </p>
+
+            <p lang="fr" style="width: 5em;">French</p>
+            <p lang="en-CA">Some Canadian English text.</p>
+
+            <div class="row">
+                <!-- Wave indicates invalid language, ignore -->
+                <div class="col-auto ps-0 ms-3" lang="sp">Spanish</div>
+            </div>
+
+            <div class="row">
+                <div class="col-auto ps-0 ms-3" lang="fr">French</div>
+            </div>
+
+
+        </div>
+
+
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
