@@ -82,11 +82,12 @@
                     <div class="row">
                         <label class="oed-required" for="city">City</label>
                         <div class="col-lg-6">
-                            <input id="city" asp-for="Form.City" class="form-control mb-2" required />
+                            <input id="city" for="Form.City" class="form-control mb-2" required />
                         </div>
                     </div>
 
                     <div class="row">
+                        <!-- TODO -->
                         <label class="oed-required" for="StateId">State</label>
                         <div class="col-lg-6">
 
@@ -94,7 +95,7 @@
                                     class="form-select mb-2 personal-standard-input"
                                     style="width: 18em"
                                     aria-label="current state"
-                                    asp-for="CurrentStateIdentifier"
+                                    for="CurrentStateIdentifier"
                                     asp-items="Model.UnitedStatesOptions">
                             </select>
 
