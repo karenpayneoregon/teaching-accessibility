@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>header</title>
+
+    <link href="https://devweb07.emp.state.or.us/headfoot/mobile/css/bootstrap.5.3.0.min.css" rel="stylesheet" />
+    <script src="https://devweb07.emp.state.or.us/headfoot/mobile/debugger/debugHelper.js"></script>
+
+    <link href="styles/headers.css" rel="stylesheet" />
+    <script src="Lib/footerHelper.js"></script>
+    <link href="Lib/index2.css" rel="stylesheet" />
+
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+    </style>
+
+</head>
+<body>
+
+
+    <main>
+
+        <div class="or-gov-head" id="mainHeader">
+            <div class="float-start">
+                <a href="https://www.emp.state.or.us/"><img src="https://www11.emp.state.or.us/graphics/jpg/header_logo_ogov_2019.jpg" alt="Oregon Employment Department">Employment Department</a>
+            </div>
+            <div class="float-end pt-2 pe-2">
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+
+        <div class="nine mt-3">
+            <h1>Header foot <span> example</span></h1>
+        </div>
+        <div class="container">
+            <div id="para"></div>
+            <!--<p>
+                Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+            </p>-->
+        </div>
+
+    </main>
+
+    <div class="row m-0">
+        <div class="col-12 text-center">
+            <button type="button" class="btn btn-primary">Does nothing</button>
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            duplicateParagraphs(8);
+
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+            document.body.append(
+                $footerHelper.create(
+                    'https://devweb07.emp.state.or.us/public/index.cfm?',
+                    'u=from_uic_lookup', 'e'));
+
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,es,zh-CN,km,hmn,lo,ro,ru,vi',
+                    layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
+                },
+                'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        function duplicateParagraphs(count = 4) {
+            const paraElement = document.getElementById('para');
+            const paragraphText = 'Lorem ipsum dolor sit amet, ' +
+                'illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. ' +
+                'Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert ' +
+                'laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no ' +
+                'molestiae voluptatibus.';
+
+            for (let index = 0; index < count; index++) {
+                const newParagraph = document.createElement('p');
+                newParagraph.textContent = paragraphText;
+                paraElement.appendChild(newParagraph);
+            }
+        }
+    </script>
+
+
+</body>
+</html>

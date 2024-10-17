@@ -1,0 +1,15 @@
+#businessName {
+    width: 15em;
+}
+
+#accountNumber {
+    width: 10em;
+}
+
+#contactPerson {
+    width: 20em;
+}
+
+.fieldset-auto-width {
+    display: inline-block;
+}

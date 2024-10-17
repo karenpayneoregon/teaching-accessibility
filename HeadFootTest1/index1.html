@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,7 +7,7 @@
     <link href="https://devweb07.emp.state.or.us/headfoot/mobile/css/bootstrap.5.3.0.min.css" rel="stylesheet" />
     <link href="styles/headers.css" rel="stylesheet" />
     <script src="https://devweb07.emp.state.or.us/headfoot/mobile/debugger/debugHelper.js"></script>
-    
+
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
 
@@ -42,8 +42,9 @@
             padding-left: 10px;
             padding-right: 10px;
         }
+
         html {
-            font-size: 22px;
+            font-size: 28px;
         }
     </style>
 
@@ -57,41 +58,16 @@
 
         <div class="container">
 
-            <div class="main-center">
+            <div class="main-center border border-dark p-1 shadow">
+                
+                <div class="hstack gap-3">
+                    <div class="bg-primary text-white border">First item</div>
+                    <div class="vr"></div>
+                    <div class="bg-light border ms-auto">Second item</div>
+                    <div class="vr"></div>
+                    <div class="bg-danger text-white border">Third item</div>
+                </div>
 
-                <form>
-
-                    <fieldset class="border border-primary shadow">
-
-                        <legend class="float-none w-auto fs-6 px-1 ms-2" id="description">
-                            <span class="fw-bold ledgendSpan">Sign up</span>
-                        </legend>
-
-                        <div class="mb-3 ms-2 me-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-
-                        <div class="mb-3 ms-2 me-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-
-                        <div class="mb-3 ms-2 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
-
-                        <button type="submit"
-                                class="btn btn-primary ms-2 mb-2 shake-slow">
-                            Submit
-                        </button>
-
-
-                    </fieldset>
-
-                </form>
             </div>
         </div>
 
