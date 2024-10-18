@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Bootstrap off canvas</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="Lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+    </style>
+
+</head>
+<body>
+
+    <div class="nine mt-3">
+        <h1>bootstrap <span> off canvas</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+
+            <div class="card shadow rounded-1" style="display: flex; justify-content: center; ">
+                <div class="card-body bg-light text-center">
+                    Bootstrap off canvas and progress bar (toggle and button are not synchronized)
+                </div>
+            </div>
+
+
+            <div class="row mt-3">
+                <div class="col-5">
+                    <div class="form-check form-switch form-control-lg">
+                        <input class="form-check-input" type="checkbox" id="toggleSidebar">
+                        <label class="form-check-label" for="toggleSidebar">Toggle Off-canvas</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <form method="post">
+            </form>
+
+
+        </div>
+
+    </main>
+
+    <div class="container">
+        <button class="btn btn-primary ms-2"
+                style="width: 226px"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasMain"
+                aria-controls="offcanvasMain">
+            About
+        </button>
+    </div>
+
+    <div class="row">
+
+        <div id="offPlacement" class="mt-2">
+            <!-- the off canvas  -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMain" aria-labelledby="offcanvasMainLabel">
+                <div class="offcanvas-header">
+                    <h2 class="offcanvas-title fs-4" id="offcanvasMainLabel">About</h2>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+
+                    <img src="images/earth.png" alt="the world" />
+
+                    <div class="mt-3">
+                        <strong>Frank Borman - One World</strong><br /><br />
+                        The view of the earth from the moon fascinated me - a small disk, 240,000 miles away. It was hard to think that that
+                        little thing held so many problems, so many frustrations. <br /><br />
+                        Raging nationalistic interests, famines, wars,
+                        pestilence don't show from that distance. I'm convinced that some wayward stranger in a space-craft, coming
+                        from some other part of the heavens, could look at earth and never know that it was inhabited at all. But the
+                        same wayward stranger would certainly know instinctively that if the earth were inhabited, then the destinies of all
+                        who lived on it must inevitably be interwoven and joined. We are one hunk of ground, water, air, clouds, floating around in space.
+                        From out there it really is 'one world'.
+                    </div>
+
+                    <div class="row mt-4">
+                        <button type="submit" class="btn btn-primary" asp-page-handler="Button1">Go to About page</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+        /* use to toggle off-canvas via the toggle switch */
+        var toggle = document.getElementById("toggleSidebar");
+        var offCanvas = new bootstrap.Offcanvas(document.getElementById("offcanvasMain"),
+            { backdrop: false });
+
+        toggle.addEventListener("change",
+            function () {
+                toggle.checked ? offCanvas.show() : offCanvas.hide();
+            });
+
+
+    </script>
+
+</body>
+</html>

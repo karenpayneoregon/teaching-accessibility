@@ -20,3 +20,8 @@ document.getElementById("toBottom").addEventListener("click", function () {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
 });
 ```
+
+## Randon text
+
+Lorem Ipsum [generator](https://github.com/fffilo/lorem-ipsum-js)
+

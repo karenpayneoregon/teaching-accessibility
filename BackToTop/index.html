@@ -8,6 +8,7 @@
     <link href="Lib/styles/headers.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
     <link href="Lib/styles/index.css" rel="stylesheet" />
+    <script src="Lib/lorem-ipsum.js"></script>
     <!--suppress no favicon-->
     <link rel="shortcut icon" href="#">
 
@@ -71,11 +72,13 @@
 
             paragraphs(20);
 
+
         });
 
         document.getElementById("backHome").addEventListener("click", function () {
             window.scrollTo({ top: 0, behavior: 'instant' });
         });
+
         document.getElementById("toBottom").addEventListener("click", function () {
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
         });
@@ -83,17 +86,15 @@
     </script>
 
     <script>
-        function paragraphs(count = 4) {
+        function paragraphs(count = 4, length = 50) {
             const paraElement = document.getElementById('para');
-            const paragraphText = 'Lorem ipsum dolor sit amet, ' +
-                'illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. ' +
-                'Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert ' +
-                'laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no ' +
-                'molestiae voluptatibus.';
+
+            // for creating random text
+            const ipsum = new LoremIpsum();
 
             for (let index = 0; index < count; index++) {
                 const newParagraph = document.createElement('p');
-                newParagraph.textContent = paragraphText;
+                newParagraph.textContent = ipsum.sentence(length);
                 paraElement.appendChild(newParagraph);
             }
         }
