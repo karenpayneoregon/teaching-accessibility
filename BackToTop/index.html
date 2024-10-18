@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Back to top/bottom using JavaScript</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Back to top/bottom<span> done with JavaScript</span></h1>
+    </div>
+
+    <main>
+
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <button id="toBottom" class="btn btn-outline-dark">
+                    <span class="me-2">Bottom</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container mb-5">
+                <div id="para"></div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <button id="backHome" class="btn btn-outline-dark">
+                    <span class="me-2">Top</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+            paragraphs(20);
+
+        });
+
+        document.getElementById("backHome").addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        });
+        document.getElementById("toBottom").addEventListener("click", function () {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
+        });
+
+    </script>
+
+    <script>
+        function paragraphs(count = 4) {
+            const paraElement = document.getElementById('para');
+            const paragraphText = 'Lorem ipsum dolor sit amet, ' +
+                'illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. ' +
+                'Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert ' +
+                'laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no ' +
+                'molestiae voluptatibus.';
+
+            for (let index = 0; index < count; index++) {
+                const newParagraph = document.createElement('p');
+                newParagraph.textContent = paragraphText;
+                paraElement.appendChild(newParagraph);
+            }
+        }
+    </script>
+</body>
+</html>
