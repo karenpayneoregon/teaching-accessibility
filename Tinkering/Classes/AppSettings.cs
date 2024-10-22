@@ -12,5 +12,4 @@ public class AppSettings
     public static IConfigurationRoot Build() => ApplicationConfiguration.ConfigurationRoot();
     public static T InitOptions<T>(string section) where T : new()
         => Configuration.GetSection(section).Get<T>();
-
 }

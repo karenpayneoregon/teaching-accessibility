@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Tinkering.Classes;
 using Tinkering.JsonConverters;
+// ReSharper disable InterpolatedStringExpressionIsNotIFormattable
 
 namespace Tinkering;
 internal partial class Program
@@ -13,8 +14,21 @@ internal partial class Program
     {
         await Setup();
         //AppSettingExample();
-    
 
+        var (localTime, isDaylightSaving) = DisplayDateTimeWithDaylightSavingCheck();
+
+        Console.WriteLine($"{localTime:dddd, MMMM dd, yyyy h:mm:ss tt} " +
+                          $"(DST: {isDaylightSaving.ToYesNo()})");
+
+        //SerializeAndDeserializeItems();
+
+
+        Console.ReadLine();
+
+    }
+
+    private static void SerializeAndDeserializeItems()
+    {
         List<Item> items =
         [
             new() { Id = 1,Name  = "100"},
@@ -44,10 +58,6 @@ internal partial class Program
         Console.WriteLine();
         var result1 = JsonSerializer.Deserialize<AnotherItem>(json1, Options2);
         //Console.WriteLine(result.Value);
-        
-
-        Console.ReadLine();
-
     }
 
     private static JsonSerializerOptions Options1 =>
