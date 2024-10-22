@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Spectre.Console.Json;
+using System.Runtime.CompilerServices;
 
 namespace Tinkering.Classes;
 public class SpectreConsoleHelpers
@@ -21,5 +22,20 @@ public class SpectreConsoleHelpers
     {
         AnsiConsole.Write(rule);
         AnsiConsole.WriteLine();
+    }
+
+    public static void PresentJson(string json)
+    {
+        AnsiConsole.Write(
+            new JsonText(json)
+                .BracesColor(Color.Red)
+                .BracketColor(Color.Green)
+                .ColonColor(Color.White)
+                .CommaColor(Color.Cyan1)
+                .StringColor(Color.GreenYellow)
+                .NumberColor(Color.White)
+                .BooleanColor(Color.Red)
+                .MemberColor(Color.Yellow)
+                .NullColor(Color.Green));
     }
 }

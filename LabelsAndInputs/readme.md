@@ -10,6 +10,12 @@ This project focuses on [associating labels to inputs](https://www.w3.org/WAI/WC
 
 ## Javascript
 
+## floatingLabels.html
+
+An example of [floating labels](https://getbootstrap.com/docs/5.0/forms/floating-labels/). The labels are inside the input fields and when the user clicks on the input field the label floats to the top of the input field. This is a common design pattern for forms.
+
+> **Note**
+> This should only be used were space is limited.
 
 ## Basic.html
 
