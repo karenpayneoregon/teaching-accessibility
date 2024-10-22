@@ -507,6 +507,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootstrapOffCanvas", "Boots
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootstrapToolTips", "BootstrapToolTips\", "{84EC7605-2ED3-4BE5-976F-2275C8CB0C6A}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53867"
+		Debug.AspNetCompiler.PhysicalPath = "BootstrapToolTips\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53867\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53867"
+		Release.AspNetCompiler.PhysicalPath = "BootstrapToolTips\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53867\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53867"
+		SlnRelativePath = "BootstrapToolTips\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -601,6 +623,10 @@ Global
 		{F8E19290-D6C4-4DB4-9E3C-9FB3CA4ECC20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8E19290-D6C4-4DB4-9E3C-9FB3CA4ECC20}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8E19290-D6C4-4DB4-9E3C-9FB3CA4ECC20}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{84EC7605-2ED3-4BE5-976F-2275C8CB0C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84EC7605-2ED3-4BE5-976F-2275C8CB0C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84EC7605-2ED3-4BE5-976F-2275C8CB0C6A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{84EC7605-2ED3-4BE5-976F-2275C8CB0C6A}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -629,6 +655,7 @@ Global
 		{74668464-3F5B-472B-AC9A-ED91AD8EFE31} = {25F151FC-A8F2-4BFF-8FF9-C09ACB91ED32}
 		{EE75A03C-7406-4C31-92AE-88C5CA6201CB} = {A685898A-BB37-4E5A-8486-2D67A0441FCC}
 		{F8E19290-D6C4-4DB4-9E3C-9FB3CA4ECC20} = {A685898A-BB37-4E5A-8486-2D67A0441FCC}
+		{84EC7605-2ED3-4BE5-976F-2275C8CB0C6A} = {A685898A-BB37-4E5A-8486-2D67A0441FCC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22F7B927-71C5-47DC-AC95-9D7B7AC43F1F}
