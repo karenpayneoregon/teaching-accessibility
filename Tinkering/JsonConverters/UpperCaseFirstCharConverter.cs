@@ -4,6 +4,9 @@ using Tinkering.Classes;
 
 namespace Tinkering.JsonConverters;
 
+/// <summary>
+/// 
+/// </summary>
 public class UpperCaseFirstCharConverter : JsonConverter<string>
 {
     public override bool CanConvert(Type typeToConvert)
@@ -13,7 +16,7 @@ public class UpperCaseFirstCharConverter : JsonConverter<string>
 
     public override string Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return reader.GetString().FirstCharacterToLowerCase();
+        return (reader.GetString() ?? string.Empty).CapitalizeFirstLetter();
     }
 
     public override void Write(Utf8JsonWriter writer, string value, JsonSerializerOptions options)

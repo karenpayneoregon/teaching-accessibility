@@ -2,6 +2,11 @@
 namespace Tinkering.Classes;
 public static class StringExtensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <returns></returns>
     public static string? FirstCharacterToLowerCase(this string? sender)
     {
         if (!string.IsNullOrEmpty(sender) && !char.IsUpper(sender[0]))
@@ -12,6 +17,17 @@ public static class StringExtensions
         }
 
         return sender;
+    }
+
+
+    public static string CapitalizeFirstLetter(this string sender)
+    {
+        if (string.IsNullOrEmpty(sender))
+        {
+            return sender;
+        }
+
+        return char.ToUpper(sender[0]) + sender.Substring(1);
     }
 }
 
