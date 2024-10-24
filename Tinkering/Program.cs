@@ -1,8 +1,11 @@
 ﻿#nullable enable
+using Spectre.Console.Json.Syntax;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Tinkering.Classes;
 using Tinkering.JsonConverters;
+using Tinkering.Models;
+
 // ReSharper disable InterpolatedStringExpressionIsNotIFormattable
 
 namespace Tinkering;
@@ -15,16 +18,51 @@ internal partial class Program
         await Setup();
         //AppSettingExample();
 
+        string json =
+            """
+            [
+              {
+                "Id": 1,
+                "FirstName": "jose",
+                "LastName": "fernandez",
+                "BirthDate": "1985-01-01"
+              },
+              {
+                "Id": 2,
+                "FirstName": "Miguel",
+                "LastName": "lopez",
+                "BirthDate": "1970-12-04"
+              },
+              {
+                "Id": 3,
+                "FirstName": "angel",
+                "LastName": "perez",
+                "BirthDate": "1980-09-11"
+              }
+            ]
+            """;
+        var people = JsonSerializer.Deserialize<List<Person>>(json, Options);
+
+
+
+        Console.ReadLine();
+
+    }
+
+    private static JsonSerializerOptions Options =>
+        new()
+        {
+            WriteIndented = true
+        };
+
+    private static void DayLight()
+    {
         var (localTime, isDaylightSaving) = DisplayDateTimeWithDaylightSavingCheck();
 
         Console.WriteLine($"{localTime:dddd, MMMM dd, yyyy h:mm:ss tt} " +
                           $"(DST: {isDaylightSaving.ToYesNo()})");
 
         //SerializeAndDeserializeItems();
-
-
-        Console.ReadLine();
-
     }
 
     private static void SerializeAndDeserializeItems()

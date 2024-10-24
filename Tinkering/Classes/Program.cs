@@ -5,6 +5,8 @@ using Tinkering.Classes;
 using Tinkering.Classes.Configuration;
 using static System.DateTime;
 using System.Data.SqlTypes;
+using System.Text.Json.Serialization;
+using Tinkering.JsonConverters;
 
 // ReSharper disable once CheckNamespace
 namespace Tinkering;
@@ -52,7 +54,7 @@ internal partial class Program
         // Calculate the local time by applying the local time zone offset, considering DST
         DateTimeOffset localTime = TimeZoneInfo.ConvertTime(utcNow, _localTimeZone);
 
-        return (localTime.ToString("dddd, MMMM dd, yyyy h:mm:ss tt"), 
+        return (localTime.ToString("dddd, MMMM dd, yyyy h:mm:ss tt"),
             _localTimeZone.IsDaylightSavingTime(localTime));
     }
 
@@ -81,4 +83,14 @@ public class Account
     public int Id { get; set; }
     public string Username { get; set; }
     public string AccountType { get; set; }
+}
+
+
+public class Weather
+{
+    public DateTime Date { get; set; }
+    public int TemperatureCelsius { get; set; }
+    [JsonConverter(typeof(UpperCaseFirstCharConverter))]
+    public string Summary { get; set; }
+    public int Wind { get; set; }
 }

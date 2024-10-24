@@ -6,10 +6,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Bootstrap features</title>
+    <title>Bootstrap icon-link</title>
 
     <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <script src="Lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="Lib/bootstrap/dist/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="Lib/styles/headers.css" rel="stylesheet" />
     <script src="lib/debugHelper.js"></script>
     <link href="Lib/styles/index.css" rel="stylesheet" />
@@ -20,82 +21,53 @@
 
     <!-- styles are here temp and once okay move to a .css file(s) -->
     <style>
-    </style>
+        /* center content center page */
+        .main-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
 
+
+    </style>
 </head>
 <body>
     <div class="nine mt-3">
-        <h1>bootstrap <span> v5.3.3</span></h1>
+        <h1>bootstrap <span> icon-link</span></h1>
+    </div>
+
+    <div class="container">
+        
+        <!-- Example for icon-link -->
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="right-arrow" viewBox="0 0 16 16">
+                <path d="M1.5 8a.5.5 0 0 1 .5-.5h10.793L8.646 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.708-.708L12.793 8.5H2a.5.5 0 0 1-.5-.5z"></path>
+            </symbol>
+        </svg>
+
+        <!--<div class="icon-container">
+            <a class="icon-link focus-ring focus-ring-success" href="https://getbootstrap.com/docs/5.3/helpers/icon-link/" target="_blank">
+                Bootstrap icon-link documentation
+                <svg class="bi" aria-hidden="true">
+                    <use xlink:href="#right-arrow"></use>
+                </svg>
+            </a>
+        </div>-->
+
+
     </div>
 
     <main>
-
-        <form method="post" class="w-25" id="messageForm">
-            <input type="hidden" id="recipientName" />
-            <input type="hidden" id="subjectText" />
-            <input type="hidden" id="messageText" />
-            <input type="hidden" id="acceptedFlag" />
-        </form>
-
-        <div class="container">
-
-            <div class="row d-flex justify-content-center align-items-center m-0" style="height: 75vh;">
-
-                <div class="card border-0" style="width: 18rem;">
-
-                    <div class="card-body">
-
-                        <form class="border p-3 shadow">
-                            <fieldset>
-
-                                <legend class="float-none w-auto fs-6 px-1" id="description1">
-                                    <span class="fw-bold ledgendSpan">Login</span>
-                                </legend>
-
-                                <div class="col-12">
-                                    <label for="FirstName">First name</label>
-                                </div>
-                                <div class="col-12">
-                                    <input id="FirstName" class="form-control"/>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="LastName">Last name</label>
-                                </div>
-                                <div class="col-12">
-                                    <input id="LastName" class="form-control"/>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="EmailAddress">Email address</label>
-                                </div>
-                                <div class="col-12">
-                                    <input id="EmailAddress" class="form-control"/>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="Region">Region</label>
-                                </div>
-                                <div class="col-12">
-                                    <input id="Region" class="form-control"/>
-                                </div>
-
-                            </fieldset>
-
-                            <div class="row mt-2">
-                                <div class="col-auto">
-                                    <button class="btn btn-primary ms-1">Submit</button>
-                                </div>
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="main-center">
+            <a class="icon-link focus-ring focus-ring-success" href="https://getbootstrap.com/docs/5.3/helpers/icon-link/" target="_blank">
+                Bootstrap icon-link documentation
+                <svg class="bi" aria-hidden="true">
+                    <use xlink:href="#right-arrow"></use>
+                </svg>
+            </a>
         </div>
 
     </main>
@@ -145,25 +117,13 @@
 
     </div>
 
-    <div class="footer fixed-bottom border-top text-center pt-2 pb-2">
-        <button class="btn btn-primary  me-2"
-                type="submit"
-                id="btn-help"
-                aria-label="Help window">
-            Help
-        </button>
 
-        <span id="footerInner"></span>
-
-    </div>
 
     <script>
 
 
         document.addEventListener("DOMContentLoaded", () => {
 
-            document.getElementById("footerInner")
-                .innerHTML = `Created ${fromNow(new Date('2024-10-09T02:30'))}`;
 
 
             document.addEventListener('keydown', function (event) {
@@ -176,36 +136,9 @@
 
         });
 
-        var modalConfirm = function (callback) {
 
-            $("#btn-help").on("click", function () {
-                $("#mi-modal").modal('show');
-            });
 
-            $("#modal-btn-yes").on("click", function () {
-                callback(true);
-                $("#mi-modal").modal('hide');
-            });
 
-            $("#modal-btn-no").on("click", function () {
-                callback(false);
-                $("#mi-modal").modal('hide');
-            });
-        };
-
-        modalConfirm(function (confirm) {
-            if (confirm) {
-                document.getElementById("recipientName").value = document.getElementById("recipient-name").value;
-                document.getElementById("messageText").value = document.getElementById("message-text").value;
-                document.getElementById("subjectText").value = document.getElementById("subject").value;
-                document.getElementById("acceptedFlag").value = true;
-            } else {
-                document.getElementById("acceptedFlag").value = false;
-            }
-
-            //document.getElementById("messageForm").submit();
-
-        });
 
     </script>
 

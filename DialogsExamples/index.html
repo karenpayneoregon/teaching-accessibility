@@ -159,11 +159,21 @@
         });
 
         document.getElementById("toastButton").addEventListener("click", function () {
+            /*
+             * Position can be
+             * top, top-start, top-end,
+             * center, center-start, center-end,
+             * bottom, bottom-start, bottom-end
+             *
+             * Several examples
+             * https://codepen.io/tutsplus/pen/ExgmBJQ
+             */
             const Toast = Swal.mixin({
                 toast: true,
-                position: "center-start",
-                showConfirmButton: false,
-                timer: 2000,
+                position: 'bottom-end',
+                showConfirmButton: true,
+                timer: 10000,
+                animation: false,
                 timerProgressBar: true,
                 didOpen: (toast) => {
                     toast.onmouseenter = Swal.stopTimer;
@@ -172,8 +182,9 @@
             });
             Toast.fire({
                 icon: "success",
-                title: "Initial Claim created"
+                title: "Account has been created!!"
             });
+
         });
 
 

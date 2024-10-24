@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Set page language</title>
+
+    <link href="Lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Lib/styles/headers.css" rel="stylesheet" />
+    <script src="lib/debugHelper.js"></script>
+    <link href="Lib/styles/index.css" rel="stylesheet" />
+    <script src="Lib/languageHelper.js"></script>
+    <!--suppress no favicon-->
+    <link rel="shortcut icon" href="#">
+
+    <!-- styles are here temp and once okay move to a .css file(s) -->
+    <style>
+        /* center content center page */
+        .main-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="nine mt-3">
+        <h1>Change page language <span> JavaScript</span></h1>
+    </div>
+
+    <main>
+
+        <div class="container">
+            <div class="main-center">
+                <div class="row mt-5">
+                    <div class="col-auto">
+
+                        <!-- Note Bootstrap focus ring class in tangent with style -->
+                        <!-- ReSharper disable once ValueShouldHaveUnits -->
+                        <select class="form-select focus-ring py-1 px-2"
+                                id="languageSelect"
+                                style="--bs-focus-ring-color: rgba(var(--bs-success-rgb), .25)"
+                                aria-label="Language selection">
+
+                            <option disabled>Languages</option>
+                            <option value="zh">Chinese</option>
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="ru">Russian</option>
+                            <option value="vi">Vietnamese</option>
+
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+             * If language is set then select the option else default to English
+             */
+            if ($languageHelper.isLanguageSet()) {
+                selectElement('languageSelect', $languageHelper.getPageLanguage());
+            } else {
+
+                selectElement('languageSelect', 'en');
+                /*
+                 * We could force the language selection here using
+                 * $languageHelper.setPageLanguage('en');
+                 */
+            }
+
+            /*
+             * Provides the ability to add outlines to every single element on a page
+             * Usage: Pass true to toggle for development environment, false for other environments
+             * To invoke, press ALT+CTRL+1 which toggles adding/removing debugger.css
+            */
+            document.addEventListener('keydown', function (event) {
+
+                if (event.key === '1' && event.altKey && event.ctrlKey) {
+                    // this is for development environment
+                    $debugHelper.toggle(true);
+                }
+
+            });
+
+        });
+
+        document.getElementById('languageSelect').addEventListener('change', showOnChange);
+        function showOnChange() {
+            $languageHelper.setPageLanguage(document.getElementById("languageSelect").value);
+        }
+
+        /*
+         * Same as done in $languageHelper
+         */
+        function selectElement(id, valueToSelect) {
+            const element = document.getElementById(id);
+            element.value = valueToSelect;
+        }
+    </script>
+
+</body>
+</html>

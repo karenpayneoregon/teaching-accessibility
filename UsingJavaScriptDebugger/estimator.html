@@ -171,6 +171,17 @@ In summary, the following changes were made:
             font-size: 20px;
             background-color: #50788B
         }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
     </style>
 
     <style id="antiClickjack">
@@ -466,7 +477,7 @@ In summary, the following changes were made:
                         <div class="col-md-4 inputdiv">
                             <label for="q5hours">
                                 Total hours:
-                                <input type="text" class="form-control" id="q5hours" name="q5hours">
+                                <input type="number" class="form-control" id="q5hours" name="q5hours">
                             </label>
                         </div>
                     </div>
