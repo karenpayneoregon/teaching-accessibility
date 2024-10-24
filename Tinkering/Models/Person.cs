@@ -1,15 +1,14 @@
 using System.Text.Json.Serialization;
 using Tinkering.JsonConverters;
 
-namespace Tinkering.Models
+namespace Tinkering.Models;
+
+public class Person
 {
-    public class Person
-    {
-        public int Id { get; set; }
-        [JsonConverter(typeof(UpperCaseFirstCharConverter))]
-        public string FirstName { get; set; }
-        [JsonConverter(typeof(UpperCaseFirstCharConverter))]    
-        public string LastName { get; set; }
-        public DateOnly BirthDate { get; set; }
-    }
+    public int Id { get; set; }
+    [JsonConverter(typeof(UpperCaseFirstCharConverter))]
+    public string FirstName { get; set; }
+    [JsonConverter(typeof(UpperCaseFirstCharConverter))]    
+    public string LastName { get; set; }
+    public DateOnly BirthDate { get; set; }
 }

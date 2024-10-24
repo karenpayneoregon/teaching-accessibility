@@ -16,9 +16,29 @@ internal partial class Program
     static async Task Main(string[] args)
     {
         await Setup();
-        //AppSettingExample();
 
+        Console.ReadLine();
+
+    }
+
+    /// <summary>
+    /// Demonstrates the usage of the <see cref="UpperCaseFirstCharConverter"/> to
+    /// deserialize and serialize JSON data.
+    /// </summary>
+    /// <remarks>
+    /// This method deserializes a JSON string into a list of <see cref="Person"/> objects, 
+    /// where the first character of the "FirstName" and "LastName" properties are converted to
+    /// uppercase.
+    /// It then serializes the list back to a JSON string and presents it to the console.
+    /// </remarks>
+    private static void UpperCaseFirstCharConverterExample()
+    {
+        /*
+         * Using lang=json will enable syntax highlighting for JSON strings
+         * and make the JSON string more readable, plus will identify bad JSON.
+         */
         string json =
+            /*lang=json*/
             """
             [
               {
@@ -42,11 +62,8 @@ internal partial class Program
             ]
             """;
         var people = JsonSerializer.Deserialize<List<Person>>(json, Options);
-
-
-
-        Console.ReadLine();
-
+        var json1 = JsonSerializer.Serialize(people, Options);
+        PresentJson(json1);
     }
 
     private static JsonSerializerOptions Options =>

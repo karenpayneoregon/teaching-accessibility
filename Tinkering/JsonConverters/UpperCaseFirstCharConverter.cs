@@ -4,9 +4,7 @@ using Tinkering.Classes;
 
 namespace Tinkering.JsonConverters;
 
-/// <summary>
-/// 
-/// </summary>
+
 public class UpperCaseFirstCharConverter : JsonConverter<string>
 {
     public override bool CanConvert(Type typeToConvert)
