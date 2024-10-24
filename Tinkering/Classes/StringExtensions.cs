@@ -1,4 +1,5 @@
-﻿namespace Tinkering.Classes;
+﻿#nullable enable
+namespace Tinkering.Classes;
 public static class StringExtensions
 {
     public static string? FirstCharacterToLowerCase(this string? sender)
