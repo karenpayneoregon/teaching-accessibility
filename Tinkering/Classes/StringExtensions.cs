@@ -1,4 +1,6 @@
 ﻿#nullable enable
+using System.Resources;
+
 namespace Tinkering.Classes;
 public static class StringExtensions
 {
@@ -32,4 +34,3 @@ public static class StringExtensions
     public static string CapitalizeFirstLetter(this string sender) 
         => string.IsNullOrEmpty(sender) ? sender : char.ToUpper(sender[0]) + sender[1..];
 }
-

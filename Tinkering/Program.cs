@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using Spectre.Console.Json.Syntax;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Tinkering.Classes;
@@ -16,6 +15,8 @@ internal partial class Program
     static async Task Main(string[] args)
     {
         await Setup();
+
+        var info = JsonSerialization.ToFileInfo(@"C:\OED\Womis_StaffView.xlsx");
 
         Console.ReadLine();
 

@@ -85,7 +85,7 @@
             document.addEventListener('keydown', function (event) {
 
                 if (event.key === '1' && event.altKey && event.ctrlKey) {
-                    // this is for development environment
+                    // this is for development environment, false for production and staging.
                     $debugHelper.toggle(true);
                 }
 
